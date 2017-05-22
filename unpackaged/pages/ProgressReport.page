@@ -1,0 +1,95 @@
+<apex:page id="page" action="{!onLoad}" controller="ProgressReportController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    <style>
+    	.justify{
+        	text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+        	width : 99%;
+        	height : 150px;
+        }
+    </style>
+    
+    <apex:form id="form">
+    	<apex:messages id="messages"/>
+        
+        <apex:pageBlock id="block" title="Annual Academic Report">
+            
+            <apex:pageBlockSection id="detailSection" title="Student Information" columns="2">
+ 				<apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matric_Year__c}"/>
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Major__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="inputSection" title="Annual Academic Report Details" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Progress_Report__c.fields.Year_of_Study__c.label}"></apex:outputLabel>
+                    <apex:actionRegion >
+                        <apex:inputField value="{!progressReport.Year_of_Study__c}">
+                            <!--<apex:actionSupport action="{!yearOfStudyOnChange}" event="onchange" reRender="block"/>-->
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Progress_Report__c.fields.Semester__c.label}"></apex:outputLabel>
+                    <apex:actionRegion >
+                        <apex:outputpanel layout="block">
+                            <apex:inputField value="{!progressReport.Semester__c}">
+                                <!--<apex:actionSupport action="{!yearOfStudyOnChange}" event="onchange" reRender="block"/>-->
+                            </apex:inputField>
+                            <small><apex:outputlabel value="(please complete within Semester 2)"/></small>
+                        </apex:outputpanel>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="{!$ObjectType.Progress_Report__c.fields.Faculty_Advisor__c.Label}"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:selectlist size="1" value="{!progressReport.Faculty_Advisor__c}" styleclass="text">
+                            <apex:selectoptions value="{!supervisorList}"/>
+                        </apex:selectlist>
+                    </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                
+                <!--<apex:inputField value="{!progressReport.Faculty_Advisor__c}"></apex:inputField>-->
+                <!--<apex:inputField value="{!progressReport.Head_of_Study__c}"></apex:inputField>-->
+                <apex:inputField value="{!progressReport.Capstone_Advisor__c}"></apex:inputField>
+                
+                <div class="justify">
+                    <b>To the student:</b> You should discuss your progress to date and choices for next semester and beyond with your faculty advisor or major advisor before choosing your electives. Prior to your meeting with him/her, please complete this form and email a pdf copy for your advisor to review. After discussing it with our advisor, please return a signed copy to your respective vice rector’s office no later than the last day of classes, semester 2.
+                	<!--<span style="color:red;"> Note: You should print this form once completed as it will not be sent electronically to your advisor.</span>-->
+                </div>
+                <br/>
+                <div class="justify">
+                    <b>To the advisor:</b> We hope that you will meet with your advisees before they report their course selection and that you also use that meeting to discuss and sign this
+                    <b> Annual Academic Report.</b> This will help them reflect upon their progress and identify areas that may need additional support.
+                </div>
+                <br/>
+                <div class="justify">
+                    <b>Instructions</b><br/>
+                    Write a detailed summary reflecting on what you have done this semester, what you have learnt, what you hope to do next semester (what elective (-s)?), and your long-term plans (summer plans? Possible majors? Study abroad?). Think broadly – this should include academics (make notes reflecting on all your current courses), LABs, and writing (have you visited the Writers’ Center?), but you can also include college life in general, extra-curricular activities, and anything else going on in your life that you want to share!
+                </div>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="aarSection" title="Student Reflections" columns="1">
+                <apex:pageBlockSectionItem >
+                    
+                	<apex:inputTextarea value="{!progressReport.Academic_Advising__c}" richText="true" html-placeholder="Input your academic advising here..." styleClass="textarea" required="true"/>
+					
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+            	<apex:outputPanel layout="block">
+                	<apex:commandButton action="{!save}" value="Submit"/>
+                	<apex:commandButton action="{!cancel}" value="Cancel" immediate="true"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

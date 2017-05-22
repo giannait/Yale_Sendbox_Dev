@@ -1,0 +1,5321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloneAsChild</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloseCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MassClose</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <businessProcesses>
+        <fullName>Capstone Module</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Change of Major</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Concurrent Degree Programme</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>General Enquiry</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>IRR Module</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Intergroup Dialogue Interest</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Leadership</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Leadership Certificate Sign-up</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Leadership Ethics Application</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Leadership Fundamentals Application</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Letter of Enrolment</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Letter of Residence</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>NGO Bootcamp Application</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>NS Deferment Letter</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>REC Form</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Request for Transcripts</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Scholarship</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Student Module</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Student Overloading Module</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Summer Independent Research</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Summer Research</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Summer Science Research</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Summer Social Science Research</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Vice Rector Note</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </businessProcesses>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <fields>
+        <fullName>Academic_Performance__c</fullName>
+        <externalId>false</externalId>
+        <label>Academic Performance</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending Supervisor</fullName>
+                    <default>false</default>
+                    <label>Pending Supervisor</label>
+                </value>
+                <value>
+                    <fullName>Supervisor Rejected</fullName>
+                    <default>false</default>
+                    <label>Supervisor Rejected</label>
+                </value>
+                <value>
+                    <fullName>Pending Head of Study</fullName>
+                    <default>false</default>
+                    <label>Pending Head of Study</label>
+                </value>
+                <value>
+                    <fullName>Head of Study Rejected</fullName>
+                    <default>false</default>
+                    <label>Head of Study Rejected</label>
+                </value>
+                <value>
+                    <fullName>Pending Ethics Committee</fullName>
+                    <default>false</default>
+                    <label>Pending Ethics Committee</label>
+                </value>
+                <value>
+                    <fullName>Ethics Committee Approved</fullName>
+                    <default>false</default>
+                    <label>Ethics Committee Approved</label>
+                </value>
+                <value>
+                    <fullName>Ethics Committee Rejected</fullName>
+                    <default>false</default>
+                    <label>Ethics Committee Rejected</label>
+                </value>
+                <value>
+                    <fullName>Pending VR</fullName>
+                    <default>false</default>
+                    <label>Pending VR</label>
+                </value>
+                <value>
+                    <fullName>VR Approved</fullName>
+                    <default>false</default>
+                    <label>VR Approved</label>
+                </value>
+                <value>
+                    <fullName>VR Rejected</fullName>
+                    <default>false</default>
+                    <label>VR Rejected</label>
+                </value>
+                <value>
+                    <fullName>Head of Study Approved</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Head of Study Approved</label>
+                </value>
+                <value>
+                    <fullName>Supervisor Approved</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Supervisor Approved</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AssetId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BusinessHoursId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Capstone_Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>(Not in Use) Capstone Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>First Level Approval</fullName>
+                    <default>false</default>
+                    <label>First Level Approval</label>
+                </value>
+                <value>
+                    <fullName>Second Level Approval</fullName>
+                    <default>false</default>
+                    <label>Second Level Approval</label>
+                </value>
+                <value>
+                    <fullName>Final Approval</fullName>
+                    <default>false</default>
+                    <label>Final Approval</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Capstone_Project_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>(Not in Use)Capstone Project Description</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Capstone_Project_Supervision__c</fullName>
+        <externalId>false</externalId>
+        <label>(Not Used) Capstone Project Supervision</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Capstone_Project_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>(Not Used) Capstone Project Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClosedDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Comments</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactFax</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContactMobile</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Department</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Student Services</fullName>
+                    <default>false</default>
+                    <label>Student Services</label>
+                </value>
+                <value>
+                    <fullName>Vice Rectors</fullName>
+                    <default>false</default>
+                    <label>Vice Rectors</label>
+                </value>
+                <value>
+                    <fullName>Dean of Students</fullName>
+                    <default>false</default>
+                    <label>Dean of Students</label>
+                </value>
+                <value>
+                    <fullName>Registry</fullName>
+                    <default>false</default>
+                    <label>Registry</label>
+                </value>
+                <value>
+                    <fullName>Office of Financial Aid</fullName>
+                    <default>false</default>
+                    <label>Office of Financial Aid</label>
+                </value>
+                <value>
+                    <fullName>Centre for International and Professional Experience</fullName>
+                    <default>false</default>
+                    <label>Centre for International and Professional Experience</label>
+                </value>
+                <value>
+                    <fullName>Residential College Offices</fullName>
+                    <default>false</default>
+                    <label>Residential College Offices</label>
+                </value>
+                <value>
+                    <fullName>Research Ethics Committee</fullName>
+                    <default>false</default>
+                    <label>Research Ethics Committee</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EntitlementId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Faculty_Advisor__c</fullName>
+        <externalId>false</externalId>
+        <label>Faculty Advisor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hardcopy_Needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hardcopy Needed?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsClosedOnCreate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsEscalated</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsSelfServiceClosed</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsStopped</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Level_1_Approver_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>(Not Used) Comments</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Level_1_Approver_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level_1_Approver_Status__c</fullName>
+        <description>(Capstone Module) not in use</description>
+        <externalId>false</externalId>
+        <label>(Not in Use) Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approve</fullName>
+                    <default>false</default>
+                    <label>Approve</label>
+                </value>
+                <value>
+                    <fullName>Reject</fullName>
+                    <default>false</default>
+                    <label>Reject</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Level_1_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level_2_Approver_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>(Not Used) Comments</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Level_2_Approver_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level_2_Approver_Status__c</fullName>
+        <description>(Not in Use) Capstone Module</description>
+        <externalId>false</externalId>
+        <label>(Not in Use) Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approve</fullName>
+                    <default>false</default>
+                    <label>Approve</label>
+                </value>
+                <value>
+                    <fullName>Reject</fullName>
+                    <default>false</default>
+                    <label>Reject</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Level_2_Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.Type__c</field>
+                <operation>equals</operation>
+                <value>Supervisor</value>
+            </filterItems>
+            <filterItems>
+                <field>Contact.Status__c</field>
+                <operation>equals</operation>
+                <value>Active</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Cases (Name)</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Max_Datetime_1st_Level_Approved__c</fullName>
+        <externalId>false</externalId>
+        <label>Max Datetime 1st Level Approved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Max_Datetime_2nd_Level_Approved__c</fullName>
+        <externalId>false</externalId>
+        <label>Max Datetime 2nd Level Approved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Max_Datetime_3rd_Level_Approved__c</fullName>
+        <externalId>false</externalId>
+        <label>Max Datetime 3rd Level Approved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MilestoneStatus</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>MilestoneStatusIcon</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Modules_Impacted__c</fullName>
+        <externalId>false</externalId>
+        <label>Modules Impacted</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NS_From_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>NS From Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>NS_To_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>NS To Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Origin</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Past_Dropped__c</fullName>
+        <externalId>false</externalId>
+        <label>Have You Dropped an Overload in The Past</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Previous_Semester__c</fullName>
+        <externalId>false</externalId>
+        <label>Overloaded/Underloaded Previous Semester</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Queue_taking_ownership_datetime__c</fullName>
+        <description>This field should be updated with the datetime value when the owner has taken the ownership</description>
+        <externalId>false</externalId>
+        <label>Max Datetime Queue Must Take Ownership</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>REC_Head_of_Study__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Head of Study</label>
+        <lookupFilter>
+            <active>false</active>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Cases1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>REC_Supervisor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Supervisor</label>
+        <lookupFilter>
+            <active>false</active>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reason</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SlaExitDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SlaStartDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SourceId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StopStartDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Sub_Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub  Department</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Department__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Student Affairs</fullName>
+                    <default>false</default>
+                    <label>Student Affairs</label>
+                </value>
+                <value>
+                    <fullName>Professional Services</fullName>
+                    <default>false</default>
+                    <label>Professional Services</label>
+                </value>
+                <value>
+                    <fullName>Change Of Major</fullName>
+                    <default>false</default>
+                    <label>Change Of Major</label>
+                </value>
+                <value>
+                    <fullName>New Semester</fullName>
+                    <default>false</default>
+                    <label>New Semester</label>
+                </value>
+                <value>
+                    <fullName>Career Services</fullName>
+                    <default>false</default>
+                    <label>Career Services</label>
+                </value>
+                <value>
+                    <fullName>Experiential Opportunities</fullName>
+                    <default>false</default>
+                    <label>Experiential Opportunities</label>
+                </value>
+                <value>
+                    <fullName>Fellowships and Graduate School</fullName>
+                    <default>false</default>
+                    <label>Fellowships and Graduate School</label>
+                </value>
+                <value>
+                    <fullName>Leadership Development</fullName>
+                    <default>false</default>
+                    <label>Leadership Development</label>
+                </value>
+                <value>
+                    <fullName>RC Executives</fullName>
+                    <default>false</default>
+                    <label>RC Executives</label>
+                </value>
+                <value>
+                    <fullName>Reg</fullName>
+                    <default>false</default>
+                    <label>Reg</label>
+                </value>
+                <value>
+                    <fullName>VR</fullName>
+                    <default>false</default>
+                    <label>VR</label>
+                </value>
+                <value>
+                    <fullName>REC</fullName>
+                    <default>false</default>
+                    <label>REC</label>
+                </value>
+                <value>
+                    <fullName>Registry</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Registry</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Student Services</controllingFieldValue>
+                <valueName>Student Affairs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Vice Rectors</controllingFieldValue>
+                <valueName>VR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Registry</controllingFieldValue>
+                <valueName>Reg</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Centre for International and Professional Experience</controllingFieldValue>
+                <valueName>Career Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Centre for International and Professional Experience</controllingFieldValue>
+                <valueName>Experiential Opportunities</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Centre for International and Professional Experience</controllingFieldValue>
+                <valueName>Fellowships and Graduate School</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Centre for International and Professional Experience</controllingFieldValue>
+                <valueName>Leadership Development</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Residential College Offices</controllingFieldValue>
+                <valueName>RC Executives</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Research Ethics Committee</controllingFieldValue>
+                <valueName>REC</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedCompany</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedName</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Total_MC__c</fullName>
+        <externalId>false</externalId>
+        <label>Total MC for semester</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type_Of_Enquiry__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Enquiry</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Request for Transcripts</fullName>
+                    <default>false</default>
+                    <label>Request for Transcripts</label>
+                </value>
+                <value>
+                    <fullName>NS Deferment Letter</fullName>
+                    <default>false</default>
+                    <label>NS Deferment Letter</label>
+                </value>
+                <value>
+                    <fullName>Request for Vice Rector Note</fullName>
+                    <default>false</default>
+                    <label>Request for Vice Rector Note</label>
+                </value>
+                <value>
+                    <fullName>Summer Language Scholarship</fullName>
+                    <default>false</default>
+                    <label>Summer Language Scholarship</label>
+                </value>
+                <value>
+                    <fullName>Summer Academic Scholarship</fullName>
+                    <default>false</default>
+                    <label>Summer Academic Scholarship</label>
+                </value>
+                <value>
+                    <fullName>Summer Arts Scholarship</fullName>
+                    <default>false</default>
+                    <label>Summer Arts Scholarship</label>
+                </value>
+                <value>
+                    <fullName>Five Year Programme with Lee Kuan Yew School of Public Policy</fullName>
+                    <default>false</default>
+                    <label>Five Year Programme with Lee Kuan Yew School of Public Policy</label>
+                </value>
+                <value>
+                    <fullName>Independent Reading and Research (IRR) Module Registration Form</fullName>
+                    <default>false</default>
+                    <label>Independent Reading and Research (IRR) Module Registration Form</label>
+                </value>
+                <value>
+                    <fullName>Capstone Module Proposal Form</fullName>
+                    <default>false</default>
+                    <label>Capstone Module Proposal Form</label>
+                </value>
+                <value>
+                    <fullName>Request for Student Status Letter (Additional remarks needed)</fullName>
+                    <default>false</default>
+                    <label>Request for Student Status Letter (Additional remarks needed)</label>
+                </value>
+                <value>
+                    <fullName>Modules Add/Drop</fullName>
+                    <default>false</default>
+                    <label>Modules Add/Drop</label>
+                </value>
+                <value>
+                    <fullName>2MC IRR/ 5MC Special Project</fullName>
+                    <default>false</default>
+                    <label>2MC IRR/ 5MC Special Project</label>
+                </value>
+                <value>
+                    <fullName>General Enquiry</fullName>
+                    <default>false</default>
+                    <label>General Enquiry</label>
+                </value>
+                <value>
+                    <fullName>Request for Change of Major/Minor</fullName>
+                    <default>false</default>
+                    <label>Request for Change of Major/Minor</label>
+                </value>
+                <value>
+                    <fullName>Request for Letter of Residence</fullName>
+                    <default>false</default>
+                    <label>Request for Letter of Residence</label>
+                </value>
+                <value>
+                    <fullName>Summer Independent Research</fullName>
+                    <default>false</default>
+                    <label>Summer Independent Research</label>
+                </value>
+                <value>
+                    <fullName>Summer Science Research</fullName>
+                    <default>false</default>
+                    <label>Summer Science Research</label>
+                </value>
+                <value>
+                    <fullName>Summer Social Science Research</fullName>
+                    <default>false</default>
+                    <label>Summer Social Science Research</label>
+                </value>
+                <value>
+                    <fullName>Summer Research</fullName>
+                    <default>false</default>
+                    <label>Summer Research</label>
+                </value>
+                <value>
+                    <fullName>REC Form Submission</fullName>
+                    <default>false</default>
+                    <label>REC Form Submission</label>
+                </value>
+                <value>
+                    <fullName>Leadership Ethics Application</fullName>
+                    <default>false</default>
+                    <label>Leadership Ethics Application</label>
+                </value>
+                <value>
+                    <fullName>NGO Bootcamp Application</fullName>
+                    <default>false</default>
+                    <label>NGO Bootcamp Application</label>
+                </value>
+                <value>
+                    <fullName>Leadership Certificate Sign-up</fullName>
+                    <default>false</default>
+                    <label>Leadership Certificate Sign-up</label>
+                </value>
+                <value>
+                    <fullName>Leadership Fundamentals Application</fullName>
+                    <default>false</default>
+                    <label>Leadership Fundamentals Application</label>
+                </value>
+                <value>
+                    <fullName>Intergroup Dialogue Interest</fullName>
+                    <default>false</default>
+                    <label>Intergroup Dialogue Interest</label>
+                </value>
+                <value>
+                    <fullName>Request for Overloading/Underloading</fullName>
+                    <default>false</default>
+                    <label>Request for Overloading/Underloading</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Underload_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Describe your underload reasons</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <listViews>
+        <fullName>AllOpenCases</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>All_LOE_Enquiries</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Letter_of_Enrolment</value>
+        </filters>
+        <label>All LOE Enquiries</label>
+    </listViews>
+    <listViews>
+        <fullName>All_LOR_Enquiries</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Letter_of_Residence</value>
+        </filters>
+        <label>All LOR Enquiries</label>
+    </listViews>
+    <listViews>
+        <fullName>All_NS_Deferment_Letter_Enquiries</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>012p00000000W63</value>
+        </filters>
+        <label>All NS Deferment Letter Enquiries</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Transcripts_Enquiries</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>012p00000000W68</value>
+        </filters>
+        <label>All Transcripts Enquiries</label>
+    </listViews>
+    <listViews>
+        <fullName>All_VR_Note_Enquiries</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Vice_Rector_Note</value>
+        </filters>
+        <label>All VR Note Enquiries</label>
+    </listViews>
+    <listViews>
+        <fullName>CIPE_Queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>CIPE Queue</label>
+        <queue>CIPE_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Dean_of_Students_Queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Dean of Students Queue</label>
+        <queue>Dean_of_Students_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MyCases</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpenCases</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Office_of_Financial_Aid_Queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Office of Financial Aid Queue</label>
+        <queue>Office_of_Financial_Aid_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RC_Exec_Queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RC Exec Queue</label>
+        <queue>RC_Exec_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Registry_Queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Registry Queues</label>
+        <queue>Registry_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Residential_College_Offices_Queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Residential College Offices Queue</label>
+        <queue>Residential_College_Offices_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Sample_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.TYPE</field>
+            <operation>equals</operation>
+            <value>Sample Cases</value>
+        </filters>
+        <label>Sample Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Student_Services_Queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Student Services Queue</label>
+        <queue>Student_Services_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Trial_Activities</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.CLOSED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.TYPE</field>
+            <operation>equals</operation>
+            <value>Trial</value>
+        </filters>
+        <label>Trial Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>Vice_Rectors_Queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Vice Rectors Queue</label>
+        <queue>Vice_Rectors_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>test_queue_1_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.REC_Form_Submission</value>
+        </filters>
+        <label>All REC Forms</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Capstone_Module</fullName>
+        <active>true</active>
+        <businessProcess>Capstone Module</businessProcess>
+        <label>Capstone Module</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Registry</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Reg</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Capstone Module Proposal Form</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Change_of_Major</fullName>
+        <active>true</active>
+        <businessProcess>Change of Major</businessProcess>
+        <label>Change of Major</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Registry</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Reg</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Request for Change of Major%2FMinor</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Five_Year_Programme_with_Lee_Kuan_Yew_School_of_Public_Policy</fullName>
+        <active>true</active>
+        <businessProcess>Concurrent Degree Programme</businessProcess>
+        <label>Five Year Programme with Lee Kuan Yew School of Public Policy</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Fellowships and Graduate School</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Five Year Programme with Lee Kuan Yew School of Public Policy</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>General_Enquiry</fullName>
+        <active>true</active>
+        <businessProcess>General Enquiry</businessProcess>
+        <label>General Enquiry</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Registry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Services</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Reg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Affairs</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>2MC IRR%2F 5MC Special Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capstone Module Proposal Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Enquiry</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>REC Form Submission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request for Change of Major%2FMinor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request for Student Status Letter %28Additional remarks needed%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>IRR_Module</fullName>
+        <active>true</active>
+        <businessProcess>IRR Module</businessProcess>
+        <label>IRR Module</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Registry</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Reg</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>2MC IRR%2F 5MC Special Project</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Intergroup_Dialogue_Interest</fullName>
+        <active>true</active>
+        <businessProcess>Intergroup Dialogue Interest</businessProcess>
+        <label>Intergroup Dialogue Interest</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Leadership Development</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Intergroup Dialogue Interest</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Leadership</fullName>
+        <active>false</active>
+        <businessProcess>Leadership</businessProcess>
+        <label>Leadership</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Leadership Development</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Capstone Module Proposal Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Independent Reading and Research %28IRR%29 Module Registration Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NS Deferment Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request for Transcripts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request for Vice Rector Note</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summer Academic Scholarship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summer Arts Scholarship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summer Language Scholarship</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Leadership_Certificate_Sign_up</fullName>
+        <active>true</active>
+        <businessProcess>Leadership Certificate Sign-up</businessProcess>
+        <label>Leadership Certificate Sign-up</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Leadership Development</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Leadership Certificate Sign-up</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Leadership_Ethics_Application</fullName>
+        <active>true</active>
+        <businessProcess>Leadership Ethics Application</businessProcess>
+        <label>Leadership Ethics Application</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Leadership Development</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Leadership Fundamentals Application</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Leadership_Fundamentals_Application</fullName>
+        <active>true</active>
+        <businessProcess>Leadership Fundamentals Application</businessProcess>
+        <label>Leadership Fundamentals Application</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Leadership Development</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Leadership Fundamentals Application</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Letter_of_Enrolment</fullName>
+        <active>true</active>
+        <businessProcess>Letter of Enrolment</businessProcess>
+        <label>Letter of Enrolment</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Registry</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Reg</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Request for Student Status Letter %28Additional remarks needed%29</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Letter_of_Residence</fullName>
+        <active>true</active>
+        <businessProcess>Letter of Residence</businessProcess>
+        <label>Letter of Residence</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Residential College Offices</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>RC Executives</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Request for Letter of Residence</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NGO_Bootcamp_Application</fullName>
+        <active>true</active>
+        <businessProcess>NGO Bootcamp Application</businessProcess>
+        <label>NGO Bootcamp Application</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Leadership Development</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>NGO Bootcamp Application</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>REC_Form_Submission</fullName>
+        <active>true</active>
+        <businessProcess>REC Form</businessProcess>
+        <label>REC Form Submission</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Research Ethics Committee</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>REC</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>REC Form Submission</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Scholarship</fullName>
+        <active>true</active>
+        <businessProcess>Scholarship</businessProcess>
+        <label>Scholarship</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Fellowships and Graduate School</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Summer Academic Scholarship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summer Arts Scholarship</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Summer Language Scholarship</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Student_Module</fullName>
+        <active>true</active>
+        <businessProcess>Student Module</businessProcess>
+        <label>Student Module</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Pending VR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VR Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VR Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Vice Rectors</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>VR</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Modules Add%2FDrop</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Student_Overloading_Module</fullName>
+        <active>true</active>
+        <businessProcess>Student Overloading Module</businessProcess>
+        <label>Student Overloading Module</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Vice Rectors</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>VR</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Request for Overloading%2FUnderloading</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Summer_Independent_Research</fullName>
+        <active>true</active>
+        <businessProcess>Summer Independent Research</businessProcess>
+        <label>Summer Independent Research</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Experiential Opportunities</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Summer Independent Research</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Summer_Research</fullName>
+        <active>true</active>
+        <businessProcess>Summer Research</businessProcess>
+        <label>Summer Research</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Experiential Opportunities</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Summer Research</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Summer_Science_Research</fullName>
+        <active>true</active>
+        <businessProcess>Summer Science Research</businessProcess>
+        <label>Summer Science Research</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Experiential Opportunities</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Summer Science Research</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Summer_Social_Science_Research</fullName>
+        <active>true</active>
+        <businessProcess>Summer Social Science Research</businessProcess>
+        <label>Summer Social Science Research</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Centre for International and Professional Experience</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>Experiential Opportunities</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Summer Social Science Research</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Vice_Rector_Note</fullName>
+        <active>true</active>
+        <businessProcess>Vice Rector Note</businessProcess>
+        <label>Vice Rector Note</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Ethics Committee Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethics Committee Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of Study Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Ethics Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Head of Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Capstone_Approval_Status__c</picklist>
+            <values>
+                <fullName>Final Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Level Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Level Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Vice Rectors</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_1_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_2_Approver_Status__c</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter Answers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Cancelled By Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instruction Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Department__c</picklist>
+            <values>
+                <fullName>VR</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Sample Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Enquiry__c</picklist>
+            <values>
+                <fullName>Request for Vice Rector Note</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.PRIORITY</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.STATUS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.CASE_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.SUBJECT</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Generate_Transcript_Letter</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Generate Transcript Letter</masterLabel>
+        <openType>newWindow</openType>
+        <page>Sample_VF</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>NS_Deferment_Letter</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>NS Deferment Letter</masterLabel>
+        <openType>newWindow</openType>
+        <page>Sample_VF</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>Print_LOE</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Print LOE</masterLabel>
+        <openType>newWindow</openType>
+        <page>Sample_VF</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>Print_LOR</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Print LOR</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/LetterofResidencePDF?id={!Case.Id}</url>
+    </webLinks>
+</CustomObject>

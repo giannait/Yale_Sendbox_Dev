@@ -1,0 +1,215 @@
+<apex:page action="{!onLoad}" controller="ConcurrentDegreeProgrammeController" showHeader="false" cache="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    <style>
+        .justify{
+            text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+            width : 99%;
+            height : 150px;
+        }
+
+        .bPageBlock .pbTitle{
+            width : 100%;
+        }
+    </style>
+    <script>
+        function validateFileUpload(e){
+            var file;
+            var alertComp = document.getElementsByClassName("alertComp")[0];
+            var gceAttachment = document.getElementsByClassName("gceAttachment")[0];
+            var transacriptAttachment = document.getElementsByClassName("transacriptAttachment")[0];
+            var validationError = false;
+
+            alertComp.innerHTML = "";
+            alertComp.display = "none";
+
+            if(gceAttachment.files[0]){
+                file = gceAttachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("GCE ‘A’ Levels file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(transacriptAttachment.files[0]){
+                file = transacriptAttachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("Transcript file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(validationError){
+                window.scrollTo(0, 0);
+                e.preventDefault();
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function showError(message){
+            var alertComp = document.getElementsByClassName("alertComp")[0];
+            alertComp.removeAttribute("style");
+            alertComp.innerHTML += "<li>" + message + "</li>";
+        }
+
+        function exchangeOnChange(){
+            var ep = document.getElementsByClassName("exchangeProgramme")[0];
+            var eps = document.getElementsByClassName("eps");
+            
+            if(ep.checked){
+                showElement(eps);
+            }else{
+                hideElement(eps);
+                
+                document.getElementsByClassName("exchangeProgrammeSemester")[0].value = null;
+            }
+        }
+    
+        function degreeProgrammeOnChange(){
+            var dp = document.getElementsByClassName("degreeProgramme")[0];
+            var pn = document.getElementsByClassName("pn");
+            
+            if(dp.checked){
+                showElement(pn);
+            }else{
+                hideElement(pn);
+                
+                document.getElementsByClassName("programmeName")[0].value = "";
+            }
+        }
+    
+        function specialProgrammeOnChange(){
+            var sp = document.getElementsByClassName("specialProgramme")[0];
+            var spn = document.getElementsByClassName("spn");
+            
+            if(sp.checked){
+                showElement(spn);
+            }else{
+                hideElement(spn);
+                
+                document.getElementsByClassName("specialProgrammeName")[0].value = "";
+            }
+        }
+    
+        function showElement(e){
+            for(var i=0;i<e.length;i++){
+                e[i].removeAttribute('style');
+            }
+        }
+    
+        function hideElement(e){
+            for(var i=0;i<e.length;i++){
+                e[i].style.display = 'none';
+            }
+        }
+    </script>
+    
+    <apex:form id="form" onsubmit="validateFileUpload(event);">
+        <apex:messages id="messages"/>
+        <ul role="alert" class="alert alertComp" style="display:none;"></ul>
+        
+        <apex:pageBlock id="block" title="Five Year Programme with Lee Kuan Yew School of Public Policy">
+            <apex:outputpanel layout="block" styleclass="justify">
+                Students are able to apply for Five Year Programme with the Lee Kuan Yew School of Public Policy, commencing November 15, 2017.
+                The application will close January 15, 2018 @ 12pm SGT.Applications submitted before or after this timeline will not be considered for admission.
+            </apex:outputpanel>
+
+            <apex:pageBlockSection id="vrSection" title="Application Form" columns="1">
+                <apex:outputField value="{!cdp.Full_Name__c}"/>
+                <apex:outputField value="{!cdp.Matriculation__c}"/>
+                <apex:outputField value="{!cdp.Citizenship__c}"/>
+                <apex:outputField value="{!cdp.Date_of_Birth__c}"/>
+                <apex:outputField value="{!cdp.Gender__c}"/>
+                <apex:outputField value="{!cdp.Contact_Number__c}"/>
+                <apex:outputField value="{!cdp.Mobile_Number__c}"/>
+                <apex:outputField value="{!cdp.Email__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="studentExchangeSection" title="Student Exchange Programme / Other programmes" columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Are you selected for an exchange programme?"/>
+                    <apex:inputField value="{!cdp.Exchange_Programme__c}" styleClass="exchangeProgramme" onchange="exchangeOnChange();"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="eps" labelStyle="display:none;" labelStyleClass="eps">
+                    <apex:outputLabel value="I will be going on exchange for"></apex:outputLabel>
+                    <apex:inputField value="{!cdp.Exchange_Programme_Semesters__c}" styleClass="exchangeProgrammeSemester"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Are you selected for any other joint/dual degree programmes?"/>
+                    <apex:inputField value="{!cdp.Degree_Programme__c}" styleClass="degreeProgramme" onchange="degreeProgrammeOnChange();"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="pn" labelStyle="display:none;" labelStyleClass="pn">
+                    <apex:outputLabel value="The programme name is"/>
+                    <apex:inputField value="{!cdp.Programme_Name__c}" styleClass="programmeName"/>    
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Are you currently in any special programmes (Business and USP/Business and U-Town Residential Programme)?"/>
+                    <apex:inputField value="{!cdp.Special_Programmes__c}" styleClass="specialProgramme" onchange="specialProgrammeOnChange();"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="spn" labelStyle="display:none;" labelStyleClass="spn">
+                    <apex:outputLabel value="The programme name is"/>
+                    <apex:inputField value="{!cdp.Special_Programme_Name__c}" styleClass="specialProgrammeName"/>    
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Academic Qualification" columns="1">
+                <apex:outputpanel layout="block">
+                    <i><apex:outputlabel value="{!fileSizeMessages}" style="color:red;font-size:small;"/></i>
+                </apex:outputpanel>
+
+                1. Please upload your GCE ‘A’ Levels or equivalent transcript
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="{!attachmentLabel}" for="gceAttachment"/>
+                    <apex:inputFile id="gceAttachment" fileName="{!gceAttachment.Name}" value="{!gceAttachment.Body}" styleclass="gceAttachment"/>
+                </apex:pageBlockSectionItem>
+                <br/>
+                2. Please upload your transcript (generated through MySIS) reflecting coursework and grades at Yale-NUS so far
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="{!attachmentLabel}" for="transacriptAttachment"/>
+                    <apex:inputFile id="transacriptAttachment" fileName="{!transacriptAttachment.Name}" value="{!transacriptAttachment.Body}" styleclass="transacriptAttachment"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="answerSection" title="Please answer the following essay questions (max. 500 words)" columns="1">
+                What is the most urgent policy challenge facing the world today? Explain your answer.
+                <apex:pageBlockSectionItem >
+                    <apex:inputField value="{!cdp.First_Answer__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                <br/>
+                Tell us about a book, article, or report that you think can offer a solution to this urgent policy challenge.  What are the main strengths and weaknesses of its central arguments?
+                <apex:pageBlockSectionItem >
+                    <apex:inputField value="{!cdp.Second_Answer__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                <br/>
+                What are the top 3 things that you would like to achieve at the end of the 2-year MPP programme?  Specifically, how do you think the programme will help you achieve these goals?
+                <apex:pageBlockSectionItem >
+                    <apex:inputField value="{!cdp.Third_Answer__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Personal Information" columns="2">
+                <apex:inputField value="{!cdp.Education__c}"/>
+                <apex:inputField value="{!cdp.Volunteer_Work__c}"/>
+                <apex:inputField value="{!cdp.Awards__c}"/>
+                <apex:inputField value="{!cdp.Accomplishments__c}"/>
+                <apex:inputField value="{!cdp.Other_Information__c}"/>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

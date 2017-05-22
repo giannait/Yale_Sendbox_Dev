@@ -1,0 +1,139 @@
+<!--
+ - Created by gianrishandy on 5/4/2017.
+ -->
+
+<apex:page id="gSchemaGenerator" title="gSchemaGenerator v1.0" controller="gSchemaGenerator_Controller" cache="false" showHeader="true" sideBar="true">
+    <apex:sectionHeader title="gSchemaGenerator" subTitle="tools for schema generator"/>
+
+    <apex:stylesheet value="{!URLFOR($Resource.gSchemaGenerator, 'jquery.dataTables.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.gSchemaGenerator, 'responsive.dataTables.min.css')}"/>
+
+    <!-- tambahan css untuk print -->
+    <apex:stylesheet value="{!URLFOR($Resource.gSchemaGenerator, 'buttons.dataTables.min.css')}"/>
+
+    <apex:includeScript value="https://code.jquery.com/jquery-1.12.4.js"/>
+    <apex:includeScript value="{!URLFOR($Resource.gSchemaGenerator, 'jquery.dataTables.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.gSchemaGenerator, 'dataTables.responsive.min.js')}"/>
+
+    <!-- tambahan js untuk print -->
+    <apex:includeScript value="{!URLFOR($Resource.gSchemaGenerator, 'dataTables.buttons.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.gSchemaGenerator, 'buttons.flash.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.gSchemaGenerator, 'jszip.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.gSchemaGenerator, 'pdfmake.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.gSchemaGenerator, 'vfs_fonts.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.gSchemaGenerator, 'buttons.html5.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.gSchemaGenerator, 'buttons.print.min.js')}"/>
+
+    <apex:form id="form" onKeyPress="if(window.event.keyCode==13)return false;">
+        <style>
+            caption{
+                caption-side : left;
+                font-size : 16px;
+            }
+
+            .popupBackground {
+                /* Background color */
+                background-color:black;
+                opacity: 0.20;
+                filter: alpha(opacity = 20);
+
+                /* Dimensions */
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 998;
+                position: absolute;
+
+                /* Mouse */
+                cursor:wait;
+            }
+
+            .PopupPanel {
+                /* Background color */
+                border: solid 2px blue;
+                background-color: white;
+
+                /* Dimensions */
+                left: 50%;
+                width: 200px;
+                margin-left: -100px;
+                top: 50%;
+                height: 60px;
+                margin-top: -25px;
+                z-index: 999;
+                position: fixed;
+
+                /* Mouse */
+                cursor:pointer;
+            }
+        </style>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var table = $('.datatable').DataTable( {
+                    responsive: true,
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+            } );
+        </script>
+
+
+
+        <apex:actionstatus id="loadingStatus">
+            <apex:facet name="start">
+                <div id="progressbar" style="">
+                    <div class="popupBackground"/>
+                    <div class="PopupPanel">
+                        <table border="0" width="100%" height="100%">
+                            <tr>
+                                <td align="center"><b>Please Wait</b></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><img src="{!URLFOR($Resource.gSchemaGenerator, 'loader-docs.gif')}"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </apex:facet>
+            <apex:facet name="stop"></apex:facet>
+        </apex:actionstatus>
+
+        <apex:actionFunction name="objectOnChange" action="{!objectOnChange}" reRender="fieldSection"/>
+
+        <apex:pageBlock id="block" mode="detail">
+            <apex:pageBlockSection id="tableSection" title="Select Object" collapsible="false" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="List of Object"/>
+                    <apex:selectList size="1" value="{!tableAPIName}">
+                        <apex:selectOptions value="{!selectOptions}"/>
+                        <apex:actionSupport event="onchange" action="{!objectOnChange}" status="loadingStatus" reRender="form" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="fieldSection" title="Field Information" columns="1" collapsible="false">
+                <apex:pageBlockTable value="{!fields}" var="f" styleClass="datatable display compact nowrap">
+                    <apex:column >
+                        <apex:facet name="header">API Name</apex:facet>
+                        <apex:outputLabel value="{!f.ApiName}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Label</apex:facet>
+                        <apex:outputLabel value="{!f.Label}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Length</apex:facet>
+                        <apex:outputLabel value="{!f.Length}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Data Type</apex:facet>
+                        <apex:outputLabel value="{!f.DataType}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

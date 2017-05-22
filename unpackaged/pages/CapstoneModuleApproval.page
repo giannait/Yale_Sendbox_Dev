@@ -1,0 +1,102 @@
+<apex:page controller="CapstoneModuleApprovalController" action="{!checkApproval}" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    <style>
+        .justify{
+            text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+            width : 99%;
+            height : 150px;
+        }
+    </style>
+    
+    <apex:form id="form2" rendered="{!!approvalProcess}">
+        <apex:pageBlock id="block" title="Capstone Project Proposal Approval">
+            <apex:pageBlockSection id="errorSection" title="Approval Information" columns="1">
+                <apex:messages id="messages"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="studentErrorSection" title="Student Information" columns="2">
+                <apex:outputField value="{!student.Name}"/>
+                <apex:outputField value="{!student.Student_Identity__c}"/>
+                
+                <apex:outputField value="{!student.Email}"/>
+                <apex:outputField value="{!student.Current_Year__c}"/>
+                
+                <apex:outputField value="{!student.Major__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="vrErrorSection" title="Capstone Project Information" columns="1">
+                <apex:outputField value="{!project.Project_Title__c}"/>
+                <apex:outputField value="{!project.Project_Description__c}" styleClass="textarea"/>
+                <apex:outputField value="{!project.Supervision__c}" styleClass="textarea"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="approval1ErrorSection" title="Approval Action" columns="1" rendered="{!firstApproval}">
+                <apex:outputField value="{!c.Level_1_Approver__c}"/>
+                <apex:outputField value="{!c.Level_1_Approver_Email__c}"/>
+                <apex:outputField value="{!c.Level_1_Approver_Status__c}"/>
+                <apex:outputField value="{!c.Level_1_Approver_Comments__c}" styleClass="textarea"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="approval2ErrorSection" title="Approval Action" columns="1" rendered="{!!firstApproval}">
+                <apex:outputField value="{!approver.Name}"/>
+                <apex:outputField value="{!c.Level_2_Approver_Email__c}"/>
+                <apex:outputField value="{!c.Level_2_Approver_Status__c}"/>
+                <apex:outputField value="{!c.Level_2_Approver_Comments__c}" styleClass="textarea"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+    <apex:form id="form" rendered="{!approvalProcess}">
+        <apex:messages id="messages"/>
+        
+        <apex:pageBlock id="block" title="Capstone Project Proposal Approval">
+            
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2" rendered="true">
+                <apex:outputField value="{!student.Name}"/>
+                <apex:outputField value="{!student.Student_Identity__c}"/>
+                
+                <apex:outputField value="{!student.Email}"/>
+                <apex:outputField value="{!student.Current_Year__c}"/>
+                
+                <apex:outputField value="{!student.Major__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="vrSection" title="Capstone Project Information" columns="1" rendered="true">
+                <apex:outputField value="{!project.Project_Title__c}"/>
+                <apex:outputField value="{!project.Project_Description__c}" styleClass="textarea"/>
+                <apex:outputField value="{!project.Supervision__c}" styleClass="textarea"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="approval1Section" title="Approval Action" columns="1" rendered="{!firstApproval}">
+                <apex:outputField value="{!c.Level_1_Approver__c}"/>
+                <apex:outputField value="{!c.Level_1_Approver_Email__c}"/>
+                <apex:inputField value="{!c.Level_1_Approver_Status__c}"/>
+                <apex:inputField value="{!c.Level_1_Approver_Comments__c}" styleClass="textarea"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="approval1InforrmationSection" title="First Approval Information" columns="1" rendered="{!!firstApproval}">
+                <apex:outputField value="{!c.Level_1_Approver__c}"/>
+                <apex:outputField value="{!c.Level_1_Approver_Status__c}"/>
+                <apex:outputField value="{!c.Level_1_Approver_Comments__c}" styleClass="textarea"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="approval2Section" title="Approval Action" columns="1" rendered="{!!firstApproval}">
+                <apex:outputField value="{!approver.Name}"/>
+                <apex:outputField value="{!c.Level_2_Approver_Email__c}"/>
+                <apex:inputField value="{!c.Level_2_Approver_Status__c}"/>
+                <apex:inputField value="{!c.Level_2_Approver_Comments__c}" styleClass="textarea"/>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!process}" value="Submit"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

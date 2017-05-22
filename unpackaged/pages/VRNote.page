@@ -1,0 +1,295 @@
+<apex:page id="page" action="{!onLoad}" controller="VRNoteController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    <style>
+    	.justify{
+        	text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+        	width : 99%;
+        	height : 150px;
+        }
+
+        .bPageHeader {
+            display:none;
+        }
+
+        .helpOrb {
+            background-image: url(/img/help/helpOrbs.gif);
+            background-position: 0 0;
+            width: 15px;
+            height: 15px;
+            background-repeat: no-repeat;
+            clip: rect(0px,15px,15px,0px);
+        }
+    </style>
+    
+    <apex:form id="form" onsubmit="validateFileUpload(event);">
+        <script>
+            function validateFileUpload(e){
+                var file;
+                var btnValue = document.activeElement.getAttribute('value');
+                var validationError = false;
+                var alertComp = document.getElementsByClassName("alertComp")[0];
+
+                var attachment = document.getElementsByClassName("attachment")[0];
+                var moduleName = document.getElementsByClassName("moduleName")[0];
+                var instructorName = document.getElementsByClassName("instructorName")[0];
+                var instructorEmail = document.getElementsByClassName("instructorEmail")[0];
+                var AssignmentDate = document.getElementsByClassName("AssignmentDate")[0];
+
+                alertComp.innerHTML = "";
+                alertComp.display = "none";
+
+                if(moduleName){
+                    if(moduleName.value == ""){
+                        if(btnValue != "Add Module" && btnValue != "Remove Module"){
+                            showError("Module Code should not be empty!");
+                            validationError = true;
+                        }
+                    }
+                }
+
+                if(instructorName){
+                    if(instructorName == ""){
+                        if(btnValue != "Add Module" && btnValue != "Remove Module"){
+                            showError("Professor Name should not be empty!");
+                            validationError = true;
+                        }
+                    }
+                }
+
+                if(instructorEmail){
+                    if(instructorEmail == ""){
+                        if(btnValue != "Add Module" && btnValue != "Remove Module"){
+                            showError("Professor Email should not be empty!");
+                            validationError = true;
+                        }
+                    }
+                }
+
+                if(AssignmentDate){
+                    if(AssignmentDate == ""){
+                        if(btnValue != "Add Module" && btnValue != "Remove Module"){
+                            showError("Assignment Due Date should not be empty!");
+                            validationError = true;
+                        }
+                    }
+                }
+
+                if(attachment.files[0]){
+                    file = attachment.files[0];
+
+                    if(file.size >= {!maxFileUploadSize}){
+                        showError("Supporting Document file size maximum is 5 Mbytes!");
+                        validationError = true;
+                    }
+                }
+
+                if(btnValue == "Cancel"){
+                    validationError = false;
+                    attachment.value = "";
+                }
+
+                if(validationError){
+                    window.scrollTo(0, 0);
+                    e.preventDefault();
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+
+            function showError(message){
+                var alertComp = document.getElementsByClassName("alertComp")[0];
+                alertComp.removeAttribute("style");
+                alertComp.innerHTML += "<li>" + message + "</li>";
+            }
+
+            function typeOnChange(){
+                var type = document.getElementsByClassName("type")[0];
+                var health = document.getElementsByClassName("health");
+
+                if(type.value == "Medical - Physical / Mental Health"){
+                    showElement(health);
+                }else{
+                    health[1].value = "";
+                    hideElement(health);
+                }
+            }
+
+            function showElement(e){
+                for(var i=0;i<e.length;i++){
+                    e[i].removeAttribute('style');
+                }
+            }
+
+            function hideElement(e){
+                for(var i=0;i<e.length;i++){
+                    e[i].style.display = 'none';
+                }
+            }
+        </script>
+
+    	<apex:messages id="messages"/>
+        <ul role="alert" class="alert alertComp" style="display:none;"></ul>
+
+        <apex:pageBlock id="block" title="Request for Vice Rector Note">
+        	<div class="justify">
+                Please read this form carefully before signing it and then arrange an appointment to see the Vice Rector, if you have not done so already. In addition, please remember that Vice Rector’s Notes (VRN) only postpone an assignment or exam.
+            </div>
+            
+            <apex:pageBlockSection id="studentSection" title="Student Information" collapsible="false" columns="2">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matric_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Residential_College__c.fields.Residential_College_Master__c.Label}"/>
+                    <apex:outputText value="{!residentialCollegeName}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="vrSection" title="Please state reason for VRN request" collapsible="false" columns="1">
+                <apex:inputField value="{!vrNote.Type__c}" styleclass="type" onchange="typeOnChange();"/>
+
+                <apex:pageblocksectionitem dataStyle="display:none;" dataStyleClass="health" labelStyle="display:none;" labelStyleClass="health">
+                    <apex:outputLabel value="{!$ObjectType.Vice_Rector_Note__c.fields.Health_Centre__c.Label}" />
+                    <apex:inputField value="{!vrNote.Health_Centre__c}" styleClass="affliationText text"/>
+                </apex:pageblocksectionitem>
+
+                <apex:inputField value="{!c.Start_Date__c}"/>
+                <apex:inputField value="{!c.End_Date__c}"/>
+                <apex:inputField value="{!vrNote.Description__c}" styleClass="textarea"/>
+                <apex:inputField value="{!vrNote.Additional_Comments__c}" styleClass="textarea"/>
+            </apex:pageBlockSection>
+
+            <apex:actionregion >
+                <apex:pageblocksection id="attachmentSection" title="Supporting Documents" columns="1" collapsible="false">
+                    <apex:outputpanel layout="block">
+                        <i><apex:outputlabel value="{!fileSizeMessage}" style="color:red;font-size:small;"/></i>
+                    </apex:outputpanel>
+    
+                    <apex:pageblocksectionitem >
+                        <apex:outputLabel value="{!attachmentLabel}" for="attachment"/>
+                            <apex:inputFile id="attachment" fileName="{!attachment.Name}" value="{!attachment.Body}" styleclass="attachment"/>
+                    </apex:pageblocksectionitem>
+                </apex:pageblocksection>
+            </apex:actionregion>
+
+            <br/><br/><br/>
+            <apex:actionRegion >
+                <apex:outputpanel id="modulePanel" layout="none">
+                    <apex:variable var="index" value="{!1}"/>
+                    <apex:pageBlockSection id="moduleSection" title="Modules Affected" columns="1" collapsible="false">
+                        <apex:repeat id="moduleRepeat" value="{!modules}" var="m">
+                            <apex:pageBlockSection title="Module Affected {!index}" columns="2" collapsible="false">
+                                <apex:inputField value="{!m.Name}" styleclass="moduleName"/>
+                                <apex:inputField value="{!m.Title__c}" />
+                                <apex:inputField value="{!m.Instructor_Name__c}" styleclass="instructorName"/>
+                                <apex:inputField value="{!m.Instructor_Email__c}" styleclass="instructorEmail"/>
+                                <apex:inputField value="{!m.Assignment__c}"/>
+                                <apex:inputField value="{!m.Assignment_Due_Date__c}" styleclass="AssignmentDate"/>
+    
+                                <!--
+                                <apex:pageBlockSectionItem helpText="{!$ObjectType.Vice_Rector_Note_Module__c.fields.Postponement__c.inlineHelpText}">
+                                    <apex:outputPanel layout="block">
+                                        <apex:outputLabel value="{!$ObjectType.Vice_Rector_Note_Module__c.fields.Postponement__c.Label}"/>
+                                        <img src="/img/s.gif" class="helpOrb" title="{!$ObjectType.Vice_Rector_Note_Module__c.fields.Postponement__c.inlineHelpText}" style="padding-left: 15px;" />
+                                    </apex:outputPanel>
+    
+                                    <apex:inputField value="{!m.Postponement__c}"/>
+                                </apex:pageBlockSectionItem>
+                                -->
+    
+                                <!--
+                                <span class="helpButton" id="page:form:block:j_id23:moduleRepeat:0:j_id24:j_id31:j_id32_helpText-_help">
+                                    <label>Postponement</label>
+                                    <img src="/img/s.gif" alt="" class="helpOrb" title=""/>
+                                        <script>
+                                            sfdcPage.setHelp('page:form:block:j_id23:moduleRepeat:0:j_id24:j_id31:j_id32_helpText', 'Are you requesting a postponement? If yes, please provide the reason and the proposed date');
+                                        </script>
+                                </span>
+                                -->
+    
+                                <apex:pageblocksectionitem >
+                                    <apex:outputlabel value="Have you already requested a postponement of this work from your professors?"/>
+                                    <apex:inputField value="{!m.Postponement_Requested__c}"/>
+                                </apex:pageblocksectionitem>
+    
+                                <apex:inputField value="{!m.Postponement_Reason__c}" styleClass="textarea"/>
+                                <apex:pageblocksectionitem ></apex:pageblocksectionitem>
+                                <!--
+                                <apex:inputField value="{!m.Proposed_Date__c}" />
+                                -->
+    
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel ></apex:outputLabel>
+                                    <apex:outputPanel layout="none">
+                                        <apex:commandButton action="{!deleteModule}" value="Remove Module" rerender="modulePanel">
+                                            <apex:param name="index" value="{!index}" assignTo="{!indexString}"/>
+                                        </apex:commandButton>
+                                        <apex:variable var="index" value="{!index + 1}"/>
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:repeat>
+    
+                        <apex:outputPanel layout="block" styleClass="text-align:center;">
+                            <apex:commandButton action="{!addModule}" value="Add Module" rerender="modulePanel"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSection>
+                </apex:outputpanel>
+            </apex:actionRegion>
+            <!--
+            <div style="text-align:center;">
+                <apex:commandButton action="{!addModule}" value="Add another module" rerender="block"/>                
+            </div>
+            <apex:variable var="index" value="{!1}"/>
+            <apex:repeat id="moduleRepeat" value="{!modules}" var="m">
+                <apex:pageBlockSection title="Modules Affected {!index}" columns="2" collapsible="false">
+                	<apex:inputField value="{!m.Name}" />
+                    <apex:inputField value="{!m.Title__c}" />
+                    <apex:inputField value="{!m.Instructor_Name__c}" />
+                    <apex:inputField value="{!m.Instructor_Email__c}" />
+                    <apex:inputField value="{!m.Assignment__c}"/>
+                    <apex:inputField value="{!m.Assignment_Due_Date__c}"/>
+
+                    <apex:pageBlockSectionItem helpText="{!$ObjectType.Vice_Rector_Note_Module__c.fields.Postponement__c.inlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Vice_Rector_Note_Module__c.fields.Postponement__c.Label}"/>
+                        <apex:inputField value="{!m.Postponement__c}"/>
+                    </apex:pageBlockSectionItem>
+                    
+
+
+                    <apex:inputField value="{!m.Postponement_Reason__c}" styleClass="textarea"/>
+                    <apex:inputField value="{!m.Proposed_Date__c}" />
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel ></apex:outputLabel>
+                        <apex:outputPanel layout="none">
+                            <apex:commandButton action="{!deleteModule}" value="Delete Module" rerender="block">
+                            	<apex:param name="index" value="{!index}" assignTo="{!indexString}"/>
+                            </apex:commandButton>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            	<apex:variable var="index" value="{!index + 1}"/>
+            </apex:repeat>
+            -->
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection collapsible="false" columns="1">
+            	<apex:outputPanel layout="block">
+                	<apex:commandButton action="{!save}" value="Submit"/>
+                	<apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

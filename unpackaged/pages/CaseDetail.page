@@ -1,0 +1,293 @@
+<apex:page id="page" controller="CaseDetailController" showHeader="false" cache="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <apex:form id="form" enctype="multipart/form-data" onsubmit="validation(event);" style="padding-top:50px;">
+        <script>
+        	Sfdc.onReady(function(){
+            	messageAutoScroll();
+                //setInterval(reloadMessage, 10000);
+            });
+        	
+        	function messageAutoScroll(){
+                var objDiv = document.getElementById("message");
+                objDiv.scrollTop = objDiv.scrollHeight;
+            }
+
+            function validation(e){
+                var file;
+                var btnValue = document.activeElement.getAttribute('value');
+                var alertComp = document.getElementsByClassName("alertComp")[0];
+                var attachment = document.getElementsByClassName("attachment")[0];
+                var humanAttachment = document.getElementsByClassName("humanAttachment")[0];
+                var rescueAttachment = document.getElementsByClassName("rescueAttachment")[0];
+                var chserAttachment = document.getElementsByClassName("chserAttachment")[0];
+                var participantAttachment = document.getElementsByClassName("participantAttachment")[0];
+                var informedAttachment = document.getElementsByClassName("informedAttachment")[0];
+                var fieldworkAttachment = document.getElementsByClassName("fieldworkAttachment")[0];
+                var validationError = false;
+
+                alertComp.innerHTML = "";
+                alertComp.display = "none";
+
+                if(attachment != null){
+                    if(attachment.files[0]){
+                        file = attachment.files[0];
+
+                        if(file.size >= {!maxFileUploadSize}){
+                            showError("Attachment file size maximum is 5 Mbytes!");
+                            validationError = true;
+                        }
+                    }
+                }else{
+                    if(humanAttachment.files[0]){
+                        file = humanAttachment.files[0];
+
+                        if(file.size >= {!maxFileUploadSize}){
+                            showError("Human Subjects Training Certificate Attachment file size maximum is 5 Mbytes!");
+                            validationError = true;
+                        }
+                    }
+
+                    if(rescueAttachment.files[0]){
+                        file = rescueAttachment.files[0];
+
+                        if(file.size >= {!maxFileUploadSize}){
+                            showError("RESCUE Attachment file size maximum is 5 Mbytes!");
+                            validationError = true;
+                        }
+                    }
+
+                    if(chserAttachment.files[0]){
+                        file = chserAttachment.files[0];
+
+                        if(file.size >= {!maxFileUploadSize}){
+                            showError("CHSER Attachment file size maximum is 5 Mbytes!");
+                            validationError = true;
+                        }
+                    }
+
+                    if(participantAttachment.files[0]){
+                        file = participantAttachment.files[0];
+
+                        if(file.size >= {!maxFileUploadSize}){
+                            showError("Participant Information Sheet Attachment file size maximum is 5 Mbytes!");
+                            validationError = true;
+                        }
+                    }
+
+                    if(informedAttachment.files[0]){
+                        file = informedAttachment.files[0];
+
+                        if(file.size >= {!maxFileUploadSize}){
+                            showError("Informed Consent Form Attachment file size maximum is 5 Mbytes!");
+                            validationError = true;
+                        }
+                    }
+
+                    if(fieldworkAttachment.files[0]){
+                        file = fieldworkAttachment.files[0];
+
+                        if(file.size >= {!maxFileUploadSize}){
+                            showError("Fieldwork Safety Plan Attachment file size maximum is 5 Mbytes!");
+                            validationError = true;
+                        }
+                    }
+                }
+
+                if(btnValue == "Cancel"){
+                    validationError = false;
+
+                    if(attachment){
+                        attachment.value = "";
+                    }else{
+                        humanAttachment.value = "";
+                        rescueAttachment.value = "";
+                        chserAttachment.value = "";
+                        participantAttachment.value = "";
+                        informedAttachment.value = "";
+                        fieldworkAttachment.value = "";
+                    }
+                }
+
+                if(validationError){
+                    window.scrollTo(0, 0);
+                    e.preventDefault();
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+
+            function showError(message){
+                var alertComp = document.getElementsByClassName("alertComp")[0];
+                alertComp.removeAttribute("style");
+                alertComp.innerHTML += "<li>" + message + "</li>";
+            }
+        </script>
+        
+        <style>
+        	.textarea{
+            	width : 99%;
+            }
+
+            .pbHeader{
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 100;
+            }
+
+
+        </style>
+        
+        <!--<apex:actionFunction name="reloadMessage" action="{!loadCaseComments}" oncomplete="messageAutoScroll();" reRender="messageHistorySection"/>-->
+        <apex:messages id="messages"/>
+        <ul role="alert" class="alert alertComp" style="display:none;"></ul>
+        
+        <apex:pageBlock id="block" title="Student Case Detail View">
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton action="{!save}" value="Send"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            
+        	<apex:pageBlockSection id="informationSection" title="Student Information" columns="1">
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Name}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="caseSection" title="Case Information" columns="2">
+                <apex:outputField value="{!c.CaseNumber}"/>
+                <apex:outputField value="{!c.Department__c}"/>
+                <apex:outputField value="{!c.Sub_Department__c}"/>
+                <apex:outputField value="{!c.Type_Of_Enquiry__c}"/>
+                <apex:outputField value="{!c.Description}"  styleClass="textarea"/>
+                <apex:outputField value="{!c.Status}"/>
+                <apex:outputField value="{!c.Approval_Status__c}" rendered="{!IF(c.Type_Of_Enquiry__c == 'REC Form Submission', true, false)}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="messageSection" title="Case Messages" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Your Reply"/>
+                    <apex:inputTextarea html-placeholder="Input your message here" value="{!caseComment.CommentBody}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <div id="message" style="overflow:auto;height:250px;width=100%;">
+                <apex:pageBlockSection id="messageHistorySection" columns="1">
+                	 <apex:repeat value="{!caseComments}" var="cComment">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!IF(cComment.CreatedById == '005p0000000x0wJAAQ', 'You', 'Admin')} ({!cComment.CreatedDate})"/>
+                            <apex:inputTextarea value="{!cComment.CommentBody}" styleClass="textarea" disabled="true"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:repeat>
+                </apex:pageBlockSection>
+            </div>
+            <br/><br/>
+            <apex:pageBlockSection columns="1" title="Attachment File" rendered="{!IF(c.Type_Of_Enquiry__c == 'REC Form Submission', false, true)}">
+                <apex:outputpanel layout="block">
+                    <i><apex:outputlabel value="{!fileSizeMessage}" style="color:red;font-size:small;"/></i>
+                </apex:outputpanel>
+
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="Attachment File" for="attachment"/>
+                	<apex:inputFile id="attachment" fileName="{!attachment.Name}" value="{!attachment.Body}" styleclass="attachment"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="2" title="Attachment File" rendered="{!IF(c.Type_Of_Enquiry__c == 'REC Form Submission', true, false)}">
+                <apex:outputpanel layout="block">
+                    <i><apex:outputlabel value="{!fileSizeMessages}" style="color:red;font-size:small;"/></i>
+                </apex:outputpanel>
+
+                <apex:pageblocksectionitem ></apex:pageblocksectionitem>
+
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="Human Subjects Training Certificate Attachment" for="hst"/>
+                    <apex:inputFile id="hst" fileName="{!humanSubjectAttachment.Name}" value="{!humanSubjectAttachment.Body}" styleclass="humanSubjectAttachment"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="RESCUE Attachment" for="ra"/>
+                    <apex:inputFile id="ra" fileName="{!rescueAttachment.Name}" value="{!rescueAttachment.Body}" styleclass="rescueAttachment"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="CHSER Attachment" for="ca"/>
+                    <apex:inputFile id="ca" fileName="{!chserAttchment.Name}" value="{!chserAttchment.Body}" styleclass="chserAttchment"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="Participant Information Sheet Attachment" for="pisa"/>
+                    <apex:inputFile id="pisa" fileName="{!participantAttachment.Name}" value="{!participantAttachment.Body}" styleclass="participantAttachment"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="Informed Consent Form Attachment" for="icfa"/>
+                    <apex:inputFile id="icfa" fileName="{!informedAttachment.Name}" value="{!informedAttachment.Body}" styleclass="informedAttachment"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="Human Subjects Training Certificate" for="hst"/>
+                    <apex:inputFile id="hst" fileName="{!fieldworkAttachment.Name}" value="{!fieldworkAttachment.Body}" styleclass="fieldworkAttachment"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1" title="Attachment Files">
+            	<apex:pageBlockTable value="{!attHistory}" var="att">
+                    <apex:column headerValue="Filename">
+                        <apex:outputLabel value="{!att.Name}"/>
+                    </apex:column>
+                    <apex:column headerValue="Created By">
+                        <apex:outputLabel value="{!att.CreatedBy.Name}"/>
+                    </apex:column>
+                    <apex:column headerValue="Action">
+                    	<apex:outputLink value="/servlet/servlet.FileDownload?file={!att.Id}" target="_blank">View file</apex:outputLink>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <!--
+    <apex:form id="form2">
+        <script>
+        	Sfdc.onReady(function(){
+            	messageAutoScroll();
+                setInterval(reloadMessage, 10000);
+            });
+        	
+        	function messageAutoScroll(){
+                var objDiv = document.getElementById("message");
+                objDiv.scrollTop = objDiv.scrollHeight;
+            }        	
+        </script>
+        <style>
+        	.header{
+            	display:none;
+            }
+        </style>
+        
+        <apex:actionFunction name="reloadMessage" action="{!loadConversations}" oncomplete="messageAutoScroll();" reRender="table"/>
+        
+    	<apex:pageBlock title="Case Q&A">
+            <div id="message" style="overflow:auto;height:250px;width=100%;">
+                <apex:pageBlockTable id="table" value="{!caseConversations}" var="ccs" style="">
+                    
+                        <apex:column headerValue="Sender">
+                            <apex:outputLabel value="{!ccs.Sender__c}"/>
+                        </apex:column>
+                        <apex:column headerValue="Message">
+                            <apex:outputLabel value="{!ccs.Message__c}"/>
+                        </apex:column>
+                    
+                </apex:pageBlockTable>
+            </div>
+            <footer>
+                <apex:inputText value="{!caseConversation.Message__c}" html-placeholder="input your message here" style="width:96%;"/>
+                <apex:commandButton action="{!saveConversation}" value="Send" oncomplete="messageAutoScroll();" reRender="form2"/>
+            </footer>
+        </apex:pageBlock>
+            
+    </apex:form>
+	-->
+</apex:page>

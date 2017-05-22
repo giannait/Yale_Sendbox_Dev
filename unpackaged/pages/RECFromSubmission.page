@@ -1,0 +1,4 @@
+<apex:page standardcontroller="REC_Form_Submitted__c" extensions="RECFromSubmissionExtension" cache="false">
+    <apex:sectionheader title="Rec Form Submission"/>
+    <apex:detail subject="{!rec.Id}" relatedlist="true" title="false"/>
+</apex:page>

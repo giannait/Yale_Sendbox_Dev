@@ -1,0 +1,222 @@
+<apex:page action="{!onLoad}" controller="IRRModuleController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    <style>
+        .justify{
+            text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+            width : 99%;
+            height : 150px;
+        }
+
+        .text{
+            width : 300px;
+        }
+
+        .bPageBlock .pbTitle {
+            vertical-align: middle;
+            color: #222;
+            font-size: 91%;
+            width: 100%;
+            margin: 0;
+        }
+    </style>
+    <script>
+        function typeOnChange(){
+            var pt = document.getElementsByClassName("projectType");
+            var ipp = document.getElementsByClassName("ipp");
+            var ipptext = document.getElementsByClassName("ipptext");
+            var partner = document.getElementsByClassName("partner");
+            var text = document.getElementsByClassName("partnertext");
+            var twomc = document.getElementsByClassName("twoMcDesc");
+            var fivemc = document.getElementsByClassName("fiveMcDesc");
+            
+            if(pt[0].value === "2MC Independent Reading and Research"){
+                showElement(twomc);
+                hideElement(fivemc);
+
+                showElement(ipp);
+            }else{
+                for(var i=0;i<partner.length;i++){
+                    partner[i].style.display = "none";
+                }
+                
+                if(pt[0].value === "5MC Special Project in Science"){
+                    showElement(fivemc);
+                }else{
+                    hideElement(fivemc);
+                }
+                
+                hideElement(twomc);
+                hideElement(ipp);
+
+                text[0].value = "";
+
+                for(var i=0;i<ipptext.length;i++){
+                    ipptext[i].value = "";
+                }
+            }
+        }
+
+        function ippOnChange(){
+            var ipptext = document.getElementsByClassName("ipptext");
+            var partner = document.getElementsByClassName("partner");
+            var text = document.getElementsByClassName("partnertext");
+
+            if(ipptext[0].value == "Partner"){
+                showElement(partner);
+            }else{
+                hideElement(partner);
+
+                text[0].value = "";                
+            }
+        }
+
+        function showElement(e){
+            for(var i=0;i<e.length;i++){
+                e[i].removeAttribute('style');
+            }
+        }
+    
+        function hideElement(e){
+            for(var i=0;i<e.length;i++){
+                e[i].style.display = 'none';
+            }
+        }
+    </script>
+    
+    <apex:form id="form">
+        <apex:messages id="messages"/>
+        
+        <apex:actionFunction name="ptOnChange" action="{!projectTypeOnchange}" reRender="block"/>
+        
+        <apex:pageBlock id="block" title="2MC Independent Reading and Research/5MC Special Project in Science Registration Form">
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matric_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Residential_College__c.fields.Residential_College_Master__c.Label}"/>
+                    <apex:outputText value="{!residentialCollegeName}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="vrSection" title="Proposal Details" columns="1">
+                <div class="twoMcDesc justify" style="display:none;">
+                    <b>2MC Independent Reading andResearch Registration Form</b>
+                    <br/><br/>
+                    Independent study in an area of special interest to the student(s), with the close guidance of a faculty
+member, leading to a final project/product.
+                    <br/><br/>
+                    In consultation with a faculty member, a student or students should craft a proposal outlining the nature of the
+project and the work s/he intends to finish during the semester. This option is intended for an individual or small
+group of students – ordinarily 1-2 students are expected to participate per project. Faculty can recommend
+projects to students, but the proposal as such should come from the students. As its name suggests, the
+proposal must have at its core the student(s) engaging primarily in independent study nature. All Independent
+Projects are graded CS/CU.
+                </div>
+
+                <div class="fiveMcDesc justify" style="display:none;">
+                    <b>5MC Special Project in Science Registration Form</b>
+                    <br/><br/>
+                    This module provides academic credit of major research projects conducted by students prior to the
+Capstone project. This is an individual project to allow students with extraordinarily strong preparation
+to receive academic credit for research conducted at the level of a capstone project prior to the fourth
+year. This module is not substitute for the capstone project, and it does not in general provide credit
+toward the major.
+                    <br/><br/>
+                    A student wishing to elect YSC4200 Special Project in Science should not be engaged or intend to be
+engaged in any forms of paid or unpaid internship or research work relating to this course. In consultation
+with a faculty member, the student should craft a proposal outlining the nature of the project and the work
+he/she intends to finish during the semester. This module is graded CS/CU.
+                </div>
+
+
+                <apex:inputField value="{!irr.Project_Type__c}" onchange="typeOnChange();" styleClass="projectType text"/>
+                
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="ipp" labelStyle="display:none;" labelStyleClass="ipp">
+                    <apex:outputLabel value="Are you doing this project individually or with a partner"/>
+                    <apex:inputField value="{!irr.Individual_Partner_Project__c}" onchange="ippOnChange();" styleClass="ipptext text"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="partner" labelStyle="display:none;" labelStyleClass="partner">
+                    <apex:outputLabel value="Partner Student ID" />
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <div class="requiredBlock"></div>
+                        <apex:inputText value="{!studentID}" styleClass="partnertext text"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:inputField value="{!irr.Project_Name__c}" styleClass="text"/>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.IRR_Module__c.fields.Project_Description__c.Label}"></apex:outputLabel>
+                    <apex:panelGrid columns="1" width="100%">
+                    	<i class="twoMcDesc" style="display:none;">
+                            Project can be literature-based or practical (lab, field, or studio work). Briefly outline the aims, methodology
+                            and expected outcomes by the end of the semester (where necessary, the supervisor should confirm that
+                            IRB approval has been applied for/obtained.) Please attach separate document for elaboration if necessary.
+                        </i>
+                        <i class="fiveMcDesc" style="display:none;">
+                            Project can be literature-based or practical (lab, field, or studio work). Briefly outline the aims, methodology
+                            and expected outcomes by the end of the semester (where necessary, the supervisor should confirm that
+                            IRB approval has been applied for/obtained.) Please attach separate document for elaboration if necessary.
+                        </i>
+                        <apex:inputField value="{!irr.Project_Description__c}" required="true" styleClass="textarea"/>
+                    </apex:panelGrid>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.IRR_Module__c.fields.Activities__c.Label}"></apex:outputLabel>
+                    <apex:panelGrid columns="1" width="100%">
+                    	<i class="twoMcDesc" style="display:none;">
+                            (Student must spend at least 5 hours per week including meeting with the faculty for a full semester.)
+                        </i>
+                        <i class="fiveMcDesc" style="display:none;">
+                            (Student must spend at least 12.5 hours per week including meetings with faculty for a full semester.)
+                        </i>
+                        
+                        <apex:inputField value="{!irr.Activities__c}" styleClass="textarea" required="true"/>
+                    </apex:panelGrid>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.IRR_Module__c.fields.Schedule__c.Label}"></apex:outputLabel>
+                    <apex:panelGrid columns="1" width="100%">
+                    	<i class="twoMcDesc" style="display:none;">
+                            (Faculty and student should plan to meet at least once a week)
+                        </i>
+                        <i class="fiveMcDesc" style="display:none;">
+                            (Faculty and student should plan to meet at least once a week)
+                        </i>
+                        
+                        <apex:inputField value="{!irr.Schedule__c}" styleClass="textarea" required="true"/>
+                    </apex:panelGrid>
+                </apex:pageBlockSectionItem>
+                
+                <apex:inputField value="{!irr.Anticipated__c}" styleClass="textarea" required="true"/>
+                <apex:inputField value="{!irr.Goals__c}" styleClass="textarea" required="true"/>
+                <apex:inputField value="{!irr.Faculty_Supervisor_Name__c}" styleClass="text"/>
+                <apex:inputField value="{!irr.Faculty_Supervisor_Email__c}" styleClass="text"/>
+                <apex:inputField value="{!irr.Faculty_Supervisor_Division__c}" styleClass="text"/>
+                
+                <!--<apex:inputField value="{!irr.Partner__c}" rendered="showPartner"/>-->
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel" immediate="true"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,67 @@
+<apex:page action="{!onLoad}" controller="LeadershipEthicsApplicationController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <style>
+        .justifyText{
+            text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+            width : 99%;
+            height : 150px;
+        }
+    </style>
+    
+    <apex:form id="form">
+        <apex:messages id="messages"/>
+        
+        <apex:pageBlock id="block" title="Leadership Ethics Application Application">
+
+            <apex:pageBlockSection columns="1">
+                This course will explore the theme of ethical leadership and hone skills around real-world application. Through this course, students will explore personal values and ethics, dilemmas across diverse perspectives, leadership privilege and dilemmas, role of ethical leadership and ethical leadership practice. <br/>
+                <br/>
+                To learn more, visit <a href="http://cipe.yale-nus.edu.sg/leadership-global-citizenship/leadership-ethics/">leadership ethics</a><br/>
+                <br/>
+                Please note that this course is best suited for sophomores and juniors.<br/>
+                <br/>
+            </apex:pageBlockSection>            
+            
+            <!--
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matrix_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+            </apex:pageBlockSection>
+            -->
+            
+            <apex:pageBlockSection id="detailSection" title="Detail Page" columns="1">
+                <apex:outputField value="{!leadership.Full_Name__c}"/>
+                <apex:outputField value="{!leadership.Class_Year__c}"/>
+                <apex:outputField value="{!leadership.Email__c}"/>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="How will Ethics help you achieve your leadership goals? Please illustrate with specific examples for at least 1 goal."></apex:outputLabel>
+                    <apex:inputField value="{!leadership.Description__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="What do you have to do to make this a meaningful experience?"></apex:outputLabel>
+                    <apex:inputField value="{!leadership.Meaningful_Experience__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,137 @@
+<apex:page action="{!onLoad}" controller="PlanOfStudyController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    <style>
+        .justifyText{
+            text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+            width : 99%;
+            height : 150px;
+        }
+    </style>
+    
+    <apex:form id="form">
+        <apex:messages id="messages"/>
+        
+        <apex:pageBlock id="block" title="Plan of Study">
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matric_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Residential_College__c.fields.Residential_College_Master__c.Label}"/>
+                    <apex:outputText value="{!residentialCollegeName}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="vrSection" title="Plan Of Study Details" columns="1">
+                <apex:inputField value="{!pos.Year_Of_Study__c}">
+                    <apex:actionSupport action="{!yearOfStudyOnChange}" event="onchange" reRender="block"/>
+                </apex:inputField>
+                <apex:inputField value="{!pos.Faculty_Advisor__c}"/>
+                <apex:inputField value="{!pos.Head_of_Studies__c}"/>
+                <apex:inputField value="{!pos.Capstone_Advisor__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="semesterSection" title="" columns="1">
+                <apex:variable var="indexPOSD" value="{!1}"/>
+                <apex:commandButton action="{!posdAddRow}" value="Add Row" reRender="block"/>
+                <apex:pageBlockTable id="posdTable" value="{!posd}" var="p">
+                    <apex:column headerValue="{!$ObjectType.Plan_Of_Study_Detail__c.fields.Semester__c.Label}">
+                        <apex:inputField value="{!p.Semester__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="{!$ObjectType.Plan_Of_Study_Detail__c.fields.Module_Name__c.Label}">
+                        <apex:inputField value="{!p.Module_Name__c}" style="width:90%"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="{!$ObjectType.Plan_Of_Study_Detail__c.fields.MC__c.Label}">
+                        <apex:inputField value="{!p.MC__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="{!$ObjectType.Plan_Of_Study_Detail__c.fields.Major_Request__c.Label}">
+                        <apex:inputField value="{!p.Major_Request__c}"/>
+                    </apex:column>
+                    
+                    <!--
+                    <apex:column headerValue="Extra-curricular">
+                        <apex:inputField value="{!p.Extra_curricular__c}"/>
+                    </apex:column>
+                    -->
+                    
+                    <!--
+                    <apex:column headerValue="Action">
+                        <apex:commandButton action="{!posdDeleteRow}" value="Delete" reRender="block">
+                            <apex:param name="indexPOSD" value="{!indexPOSD}" assignTo="{!posdIndexString}"/>
+                        </apex:commandButton>
+                        
+                        <apex:variable var="indexPOSD" value="{!indexPOSD + 1}"/>
+                    </apex:column>
+                    -->
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:variable var="indexPOSR" value="{!1}"/>
+            <apex:pageBlockSection id="detailSection" title="" columns="1">
+                <apex:inputField value="{!posResult.MC__c}"/>
+                <apex:inputField value="{!posResult.CAP__c}"/>
+                <apex:inputField value="{!posResult.Task__c}" styleClass="textarea"/>
+                <apex:inputField value="{!posResult.Programme__c}" styleClass="textarea"/>
+                <apex:inputField value="{!posResult.Career_Planning__c}" styleClass="textarea"/>
+                <apex:inputField value="{!posResult.Reflection__c}"/>
+
+                <!--
+                <apex:commandButton action="{!posrAddRow}" value="Add Row" reRender="block"/>
+                <apex:pageBlockTable id="posrTable" value="{!posr}" var="p">
+                    <apex:column headerValue="Cumulative MCs">
+                        <apex:inputField value="{!p.MC__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Cumulative CAP">
+                        <apex:inputField value="{!p.CAP__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Recommended Tasks">
+                        <apex:inputField value="{!p.Task__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Special Programmes">
+                        <apex:inputField value="{!p.Programme__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Career Planning">
+                        <apex:inputField value="{!p.Career_Planning__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Reflections for the year">
+                        <apex:inputField value="{!p.Reflection__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Action">
+                        <apex:commandButton action="{!posrDeleteRow}" value="Delete" reRender="block">
+                            <apex:param name="indexPOSR" value="{!indexPOSR}" assignTo="{!posrIndexString}"/>
+                        </apex:commandButton>
+                        
+                        <apex:variable var="indexPOSR" value="{!indexPOSR + 1}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+                -->
+            </apex:pageBlockSection>
+            <br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

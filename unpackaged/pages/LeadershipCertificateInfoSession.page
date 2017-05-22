@@ -1,0 +1,58 @@
+<apex:page action="{!onLoad}" controller="LeadershipCertificateController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <style>
+    	.justifyText{
+        	text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+        	width : 99%;
+        	height : 150px;
+        }
+    </style>
+    
+    <apex:form id="form">
+    	<apex:messages id="messages"/>
+        
+        <apex:pageBlock id="block" title="Leadership Certificate Info Session Application">
+            <apex:pageBlockSection columns="1">
+            	Leadership Certificate Info Session<br/>
+				<br/>
+                Interested in exploring and deepening your leadership practice?<br/> 
+                <br/>
+                Embark on a 5-step sequence for structured leadership development over your 4 years of college through the Yale-NUS Leadership Certificate! Find out more about the Leadership Certificate sequence and specific courses such as Leadership Fundamentals, Ethics, IGD and Ignite! that will be offered this semester. You'll also get to meet the instructors and hear from your peers, to get a glimpse into the topics the courses will offer.<br/>
+                <br/>
+                Contact yocktheng.tan@yale-nus.edu.sg with questions or more information.<br/>
+                <br/>
+            </apex:pageBlockSection>
+            
+            <!--
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matrix_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+            </apex:pageBlockSection>
+			-->
+            
+            <apex:pageBlockSection id="detailSection" title="Detail Page" columns="1">
+            	<apex:outputField value="{!leadership.Full_Name__c}"/>
+                <apex:outputField value="{!leadership.Class_Year__c}"/>
+                <apex:outputField value="{!leadership.Email__c}"/>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+            	<apex:outputPanel layout="block">
+                	<apex:commandButton action="{!save}" value="Submit"/>
+                	<apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

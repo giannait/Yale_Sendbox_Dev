@@ -1,0 +1,136 @@
+<apex:page action="{!onLoad}" id="page" showHeader="false" sidebar="false" controller="SummerScholarshipController">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <style>
+        .textarea{
+        width : 99%;
+        }
+    </style>
+    
+    <script>
+            function setType(){
+                document.getElementsByClassName('hiddenField')[0].setAttribute("value", "Summer Arts Scholarship");
+            }
+            
+            $(document).ready(function(){
+                $(".totalCount").on("change paste keyup", function() {
+                    var totalValue = 0;
+                
+                    console.log('asd');
+                    $('.totalCount').each(function(i, obj) {
+                        if($(obj).val() != ''){
+                            totalValue += parseInt($(obj).val());
+                        }
+                    });
+                    
+                    $('.totalField').val(totalValue);
+                });
+            });            
+    </script>
+    
+    <apex:form id="form" enctype="multipart/form-data">
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:inputText value="{!summerSch}" styleClass="hiddenField" style="display: none"/>
+        
+        <apex:pageBlock id="block" title="Summer Academic Scholarship">
+            <apex:pageBlockSection columns="1">
+                <div style="text-align:center;">
+                	<img width="125" src="https://c.cs31.content.force.com/servlet/servlet.ImageServer?id=015p0000000EVUV&oid=00Dp00000008n28&lastMod=1477281717000"/>
+                    <br/><br/>
+                    <h1 style="font-size: 20px">Yale-NUS College Summer Arts Scholarship</h1>
+                    <br/><br/>
+                    <h1 style="font-size: 20px">AY 2015-16 Application Form</h1>
+                    <br/><br/><br/>
+                    <span>Return this form to cipe@yale-nus.edu.sg by 11:59 pm on Nov 24, 2015 with the subject heading</span>
+                    <br/><br/>
+                    <span>“Summer Arts Scholarship Application Your Name”</span>
+                </div>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="First Name"></apex:outputLabel>
+                	<apex:inputText value="{!student.firstName}" style="width: 350px" disabled="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Last Name"></apex:outputLabel>
+                	<apex:inputText value="{!student.lastName}" style="width: 350px" disabled="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Matric No."></apex:outputLabel>
+                	<apex:inputText value="{!student.Student_Identity__c}" style="width: 350px" disabled="true"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:inputField value="{!student.Graduation_Year__c}" style="width: 350px"/>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Residential College"></apex:outputLabel>
+                	<apex:inputText value="{!rc.Name}" style="width: 350px" disabled="true"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:inputField value="{!student.Name_of_Head_of_Studies__c}" style="width: 350px"/>
+            </apex:pageBlockSection>
+            <br/><br/>
+            <apex:pageBlockSection columns="1" title="1. Non-freshmen: please upload your transcript (generated through MySIS) reflecting coursework and grades at Yale-NUS so far.">
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="Upload Here" for="attachment"/>
+                	<apex:inputFile id="attachment" fileName="{!attachment.Name}" value="{!attachment.Body}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="2. Short Essay: Why do you want to study this language? How would this opportunity fit into your academic, professional, and/or personal development goals? (250-300 words)">
+                <apex:pageBlockSectionItem >
+                    <apex:inputTextArea value="{!schShip.Short_Essay__c}" rows="4" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="3. Program(s) you wish to attend:">
+                <small>All fields to be completed by student (put NA if information is not available):</small>
+                <br/><br/>
+                <strong>First Choice</strong>
+                <br/>
+                <apex:inputField value="{!schShip.Program_Name__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Institution_Name__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Location__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Start__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.End__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Number_of_Weeks__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Number_of_Instructional_Hours__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Number_of_Credits_Awarded_by_Program__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.List_of_other_liberal_arts_colleges__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Program_Application_Deadline__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.URL__c}" style="width: 200px"/>
+                <apex:inputTextArea rows="3" value="{!schShip.Brief_program_description_reasons__c}" styleClass="textarea"/>
+                <br/><br/>
+                <strong>Second Choice (If Any)</strong>
+                <br/>
+                <apex:inputField value="{!schShip.Program_Name2__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Institution_Name2__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Location2__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Start2__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.End2__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Number_of_Weeks2__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Number_of_Instructional_Hours2__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Number_of_Credits_Awarded_by_Program2__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.List_of_other_liberal_arts_colleges2__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.Program_Application_Deadline2__c}" style="width: 200px"/>
+                <apex:inputField value="{!schShip.URL2__c}" style="width: 200px"/>
+                <apex:inputTextArea rows="3" value="{!schShip.Brief_program_description_reasons2__c}" styleClass="textarea"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="4. Budget Proposal: What are your estimated amounts for the following expenses?">
+                <apex:inputField styleClass="totalCount" value="{!schShip.Tuition__c}" style="width: 350px"/>
+                <apex:inputField styleClass="totalCount" value="{!schShip.Airfare__c}" style="width: 350px"/>
+                <apex:inputField styleClass="totalCount" value="{!schShip.Accommodation__c}" style="width: 350px"/>
+                <apex:inputField styleClass="totalCount" value="{!schShip.Food__c}" style="width: 350px"/>
+                <apex:inputField styleClass="totalCount" value="{!schShip.Transportation__c}" style="width: 350px"/>
+                <apex:inputField styleClass="totalCount" value="{!schShip.Other_Misc_Costs__c}" style="width: 350px"/>
+                <apex:inputField styleClass="totalField" value="{!schShip.Total__c}" style="width: 350px"/>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+            	<apex:outputPanel layout="block">
+                	<apex:commandButton action="{!submitData}" id="submitButton" value="Submit" onclick="setType();"/>
+                    <apex:commandButton action="{!cancel}" id="cancelButton" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

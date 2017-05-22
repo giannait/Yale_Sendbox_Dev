@@ -1,0 +1,104 @@
+<apex:page action="{!onLoad}" controller="SummerSocialScienceResearchController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <style>
+    	.justifyText{
+        	text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+        	width : 99%;
+        	height : 150px;
+        }
+
+        .bPageBlock .pbTitle {
+            width : 100%;
+        }
+    </style>
+    
+    <apex:form id="form">
+    	<apex:messages id="messages"/>
+      	
+        <apex:pageBlock id="block" title="Summer Social Science Research Program (SSSR)">
+            <apex:pageBlockSection id="vrSection" title="Application Form" columns="1">
+                <apex:outputField value="{!sssr.Full_Name__c}"/>
+                <apex:inputField value="{!sssr.Academic_Adviser__c}"/>
+                <apex:outputField value="{!sssr.Class_Year__c}"/>
+                <apex:inputField value="{!sssr.CAP__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="choicesSection" title="Please list your top 2 choices for Summer Science Research projects." columns="1">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="1"/>
+                	<apex:inputField value="{!sssr.First_Choices__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="2"/>
+                	<apex:inputField value="{!sssr.Second_Choices__c}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            
+            <apex:pageBlockSection id="academicCourseworkSection" title="List relevant academic coursework you have taken" columns="1">
+                <apex:variable var="index" value="{!1}"/>
+                <apex:commandButton action="{!addRow}" value="Add Row" reRender="academicCourseworkSection"/>
+            	
+                <apex:pageBlockTable id="table" value="{!sssrac}" var="s">
+                	<apex:column headerValue="Institution">
+                        <apex:inputField value="{!s.Institution__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Course">
+                        <apex:inputField value="{!s.Course__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Dates of Study (Begin)">
+                        <apex:inputField value="{!s.Dates_of_Study_Start__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Dates of Study (End)">
+                        <apex:inputField value="{!s.Dates_of_Study_End__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Grade Received">
+                        <apex:inputField value="{!s.Grade_Received__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Action">
+                    	<apex:commandButton action="{!deleteRow}" value="Delete" rerender="academicCourseworkSection">
+                            <apex:param name="index" value="{!index}" assignTo="{!indexString}"/>
+                        </apex:commandButton>
+                        
+                        <apex:variable var="index" value="{!index + 1}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="studentExchangeSection" title="" columns="1">
+                Describe any other prior research experience you have had (independent study, working in a laboratory, analysing research data, etc.)
+                <apex:pageBlockSectionItem >
+                	<apex:inputField value="{!sssr.Describe__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                <br/>
+                Short Essay – Choice 1: Why do you want to participate in this research project? How does it fit into your academic, professional, and/or personal development goals?
+                <apex:pageBlockSectionItem >
+                	<apex:inputField value="{!sssr.First_Choices_Description__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                <br/>
+                Short Essay – Choice 2: Why do you want to participate in this research project? How does it fit into your academic, professional, and/or personal development goals?
+                <apex:pageBlockSectionItem >
+                    <apex:inputField value="{!sssr.Second_Choices_Description__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                <br/>
+                (Optional): If you have special circumstances that you believe the Committee should know about, please describe them briefly here
+                <apex:pageBlockSectionItem >
+                	<apex:inputField value="{!sssr.Special_Circumstances__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+            	<apex:outputPanel layout="block">
+                	<apex:commandButton action="{!save}" value="Submit"/>
+                	<apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,146 @@
+<apex:page id="page" action="{!onLoad}" controller="StudentOverloadingModuleController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <style type="text/css">
+        .bPageBlock .pbTitle {
+            vertical-align: middle;
+            color: #222;
+            font-size: 91%;
+            width: 100%;
+            margin: 0;
+        }
+        
+        .column{
+        	width: 90%;
+        }
+        
+        .textarea{
+        	width : 99%;
+        	height : 150px;
+        }
+    </style>
+    
+    <apex:form id="form">
+    	<apex:messages />
+        
+        <apex:pageBlock id="block" title="Request for Overloading/Underloading">
+            <apex:outputPanel layout="block" styleClass="pbSubsection">
+                Please fill up this form which will be submitted to your <b>Vice Rector</b> for approval if you wish to apply for an overload or underload (please note that a meeting with the Vice Rector may be required).<br/>
+                <br/>
+                <b>Notes on Overloading/Underloading:</b><br/>
+                
+                <ol>
+                    <li>The recommended workload is 20 MC per semester. Students are required to register between 18 MC to 22 MC per semester. Students wishing to register less than 18 MC or more than 22 MC per semester must seek their Vice Rector’s approval. However, if you are in your graduating (final) semester, you are allowed to register a minimum of 15 MC.</li>
+                    <li>Students wishing to register less than 15 MC per semester will need to petition the Committee on Academic Standards (CAS) through Vice Rector instead of completing this form.</li>
+                    <li>Students who plan to underload should be mindful that an underload might affect their graduation progress and ability to complete their graduation requirements within the stipulated candidature period, hence they are advised to plan carefully.</li>
+                    <li>Pre-approval of academic plan by your Faculty Advisor or Head of Study is required.</li>
+                    <li>In the case of overloading, please ensure that there are no class and exam timetable clashes with the requested module to overload.</li>
+                    <li>If you are overloading with a NUS module, please ensure that you follow up to submit the online ‘Module Add/Drop’ form as well.</li>
+                    <li>If you are overloading with a Yale-NUS module, please ensure you follow up to add the module in OurCORS module registration system after your Vice Rector has approved the overload.</li>
+                    <li>If you register for a fifth module but end up dropping it, you may NOT be able to request an overload the following semester.</li>
+                </ol>
+            </apex:outputPanel>
+            
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2" collapsible="false">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matric_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Residential_College__c.fields.Residential_College_Master__c.Label}"/>
+                    <apex:outputText value="{!residentialCollegeName}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:outputPanel id="table" layout="block">
+            	<apex:actionRegion >
+                	<apex:variable var="index" value="{!1}"/>
+                    <apex:pageBlockSection title="Apply for Overload with Module(s)" columns="1" collapsible="false">
+                        <apex:commandButton action="{!addRow}" value="Add Row" reRender="table"/>
+                        <apex:pageBlockTable id="tableModule" value="{!studentOverloadingModules}" var="sm">
+                            <apex:column headerValue="{!$ObjectType.Student_Overloading_Module__c.fields.Academic_Year__c.Label}">
+                                <apex:inputField value="{!sm.Academic_Year__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Overloading_Module__c.fields.Semester__c.Label}">
+                                <apex:inputField value="{!sm.Semester__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Overloading_Module__c.fields.Module_Host_Faculty__c.Label}">
+                                <apex:inputField value="{!sm.Module_Host_Faculty__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Overloading_Module__c.fields.Module_Code__c.Label}">
+                                <apex:inputField value="{!sm.Module_Code__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Overloading_Module__c.fields.Module_Title__c.Label}">
+                                <apex:inputField value="{!sm.Module_Title__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Overloading_Module__c.fields.Module_Instructor__c.Label}">
+                                <apex:inputField value="{!sm.Module_Instructor__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Overloading_Module__c.fields.Modular_Credits__c.Label}">
+                                <apex:inputField value="{!sm.Modular_Credits__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="Action">
+                                <apex:commandButton action="{!deleteRow}" value="Delete Row" reRender="table">
+                                    <apex:param name="index" value="{!index}" assignTo="{!indexString}"/>
+                                </apex:commandButton>
+                                
+                                <apex:variable var="index" value="{!index + 1}"/>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:actionRegion>
+            </apex:outputPanel>
+            
+            <apex:pageBlockSection id="descriptSection" collapsible="false" title="If you are applying to overload with the above module(s), please answer the following questions:" columns="1">
+            	<apex:outputPanel layout="block">
+                	Please briefly describe your academic performance this semester and the grades you are expected to obtain. In addition, please describe your extra- and co-curricular commitments. Will this change next semester?
+                </apex:outputPanel>
+                <apex:pageBlockSectionItem >
+                	<apex:inputField value="{!c.Academic_Performance__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputPanel layout="block">
+                	Please state if you have overloaded or underloaded in previous semesters.
+                </apex:outputPanel>
+                <apex:pageBlockSectionItem >
+                	<apex:inputField value="{!c.Previous_Semester__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputPanel layout="block">
+                	Have you dropped an overload in the past? If so, why?
+                </apex:outputPanel>
+                <apex:pageBlockSectionItem >
+                	<apex:inputField value="{!c.Past_Dropped__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputPanel layout="block">
+                	<b>Apply for Underload</b>
+                </apex:outputPanel>
+                <apex:outputPanel layout="block">
+                	If you are applying to underload, please describe your reasons for doing so and what are your plans to make up for the shortfall?
+                </apex:outputPanel>
+                <apex:pageBlockSectionItem >
+                	<apex:inputField value="{!c.Underload_Reason__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputPanel layout="block">
+                	<b>Total Number of MCs expected to be completed by end of current semester, after overloading or underloading : </b>
+                    <apex:inputText value="{!c.Total_MC__c}"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1" collapsible="false">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,632 @@
+<apex:page id="page" showheader="false" sidebar="false" standardstylesheets="false" cache="false" applybodytag="false" applyhtmltag="false">
+    <html>
+        <head>
+            <meta charset="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+            <link rel="profile" href="https://gmpg.org/xfn/11"/>
+            <link rel="pingback" href="https://admissions.yale-nus.edu.sg/xmlrpc.php"/>
+            <!--[if lt IE 9]>
+            <script src="https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/js/html5.js"></script>
+            <![endif]-->
+
+            <!-- This site is optimized with the Yoast WordPress SEO plugin v1.5.6 - https://yoast.com/wordpress/plugins/seo/ -->
+            <title>Student Landing Page - Yale-NUS College</title>
+            <link rel="canonical" href="https://admissions.yale-nus.edu.sg/contact-visit-us/" />
+            <meta property="og:locale" content="en_US" />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content="Contact &amp; Visit Us - Yale-NUS College" />
+            <meta property="og:url" content="https://admissions.yale-nus.edu.sg/contact-visit-us/" />
+            <meta property="og:site_name" content="Yale-NUS College" />
+            <!-- / Yoast WordPress SEO plugin. -->
+
+            <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+            <link rel='dns-prefetch' href='//s.w.org' />
+            <link rel="alternate" type="application/rss+xml" title="Yale-NUS College &raquo; Feed" href="https://admissions.yale-nus.edu.sg/feed/" />
+            <link rel="alternate" type="application/rss+xml" title="Yale-NUS College &raquo; Comments Feed" href="https://admissions.yale-nus.edu.sg/comments/feed/" />
+            <link rel="alternate" type="application/rss+xml" title="Yale-NUS College &raquo; Contact &#038; Visit Us Comments Feed" href="https://admissions.yale-nus.edu.sg/contact-visit-us/feed/" />
+            <script type="text/javascript">
+			    window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/admissions.yale-nus.edu.sg\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.4"}};
+			    !function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		    </script>
+            <style type="text/css">
+                img.wp-smiley,
+                img.emoji {
+                    display: inline !important;
+                    border: none !important;
+                    box-shadow: none !important;
+                    height: 1em !important;
+                    width: 1em !important;
+                    margin: 0 .07em !important;
+                    vertical-align: -0.1em !important;
+                    background: none !important;
+                    padding: 0 !important;
+                }
+            </style>
+            <link rel='stylesheet' id='dbStyle-css'  href='https://admissions.yale-nus.edu.sg/wp-content/plugins/db-prefix-change/css/style.css?ver=4.6.4' type='text/css' media='all' />
+            <link rel='stylesheet' id='contact-form-7-css'  href='https://admissions.yale-nus.edu.sg/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.9.3' type='text/css' media='all' />
+            <link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic' type='text/css' media='all' />
+            <link rel='stylesheet' id='genericons-css'  href='https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/genericons/genericons.css?ver=3.0.2' type='text/css' media='all' />
+            <link rel='stylesheet' id='twentyfourteen-style-css'  href='https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/style.css?ver=4.6.4' type='text/css' media='all' />
+            <!--[if lt IE 9]>
+            <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/css/ie.css?ver=20131205' type='text/css' media='all' />
+            <![endif]-->
+            <link rel='stylesheet' id='sccss_style-css'  href='https://admissions.yale-nus.edu.sg?sccss=1&#038;ver=4.6.4' type='text/css' media='all' />
+            <!-- This site uses the Yoast Google Analytics plugin v5.0.5 - Universal disabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-55180040-1']);
+                _gaq.push(['_gat._forceSSL']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+
+            </script>
+            <!-- / Yoast Google Analytics -->
+            <script type='text/javascript' src='https://admissions.yale-nus.edu.sg/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+            <script type='text/javascript' src='https://admissions.yale-nus.edu.sg/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+            <script type='text/javascript' src='https://admissions.yale-nus.edu.sg/wp-content/plugins/db-prefix-change/js/jquery.validate.min.js?ver=4.6.4'></script>
+            <script type='text/javascript' src='https://admissions.yale-nus.edu.sg/wp-content/plugins/db-prefix-change/js/util.js?ver=4.6.4'></script>
+            <link rel='https://api.w.org/' href='https://admissions.yale-nus.edu.sg/wp-json/' />
+            <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://admissions.yale-nus.edu.sg/xmlrpc.php?rsd" />
+            <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://admissions.yale-nus.edu.sg/wp-includes/wlwmanifest.xml" />
+            <link rel='shortlink' href='https://admissions.yale-nus.edu.sg/?p=263' />
+            <link rel="alternate" type="application/json+oembed" href="https://admissions.yale-nus.edu.sg/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fadmissions.yale-nus.edu.sg%2Fcontact-visit-us%2F" />
+            <link rel="alternate" type="text/xml+oembed" href="https://admissions.yale-nus.edu.sg/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fadmissions.yale-nus.edu.sg%2Fcontact-visit-us%2F&#038;format=xml" />
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'/>
+            <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'/>
+            <link rel="stylesheet" type="text/css" href="https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/jquery-ui.css" />
+            <link rel="icon" type="icon/ico" href="https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/images/BSC Fav Icon.ico" />
+            <script type="text/javascript" src="https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/js/jquery-1.8.3.min.js"></script>
+            <script type="text/javascript" src="https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/js/jquery.cycle.all.js"></script>
+            <script type="text/javascript" src="https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/js/custom_js.js"></script>
+            <script type="text/javascript" src="https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/js/tab.js"></script>
+            <script type="text/javascript" src="https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/js/jquery-ui.js"></script>
+            <script type="text/javascript" src="https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/js/icheck.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                  $('#tab_apply input').iCheck({
+                    checkboxClass: 'icheckbox_square',
+                    radioClass: 'iradio_flat'
+                  });
+
+                });
+            </script>
+
+            <script type="text/javascript">
+                $(function() {
+
+                    if (document.documentElement.clientWidth < 640) {
+
+
+                        $(".open-button").click(function(e){
+                            e.preventDefault();
+                            $(".tab_menu_2").fadeIn();
+                        });
+
+                        $(".close-button a").click(function(e){
+                            e.preventDefault();
+                            $(".tab_menu_2").fadeOut();
+                        });
+                        $(".latest_newsadd2 li a").click(function(e){
+                            e.preventDefault();
+                            $(".tab_menu_2").fadeOut();
+                        });
+
+                }
+
+                    $(".header-button a").click(function(e){
+                        e.preventDefault();
+                        $(this).toggleClass("open");
+                        $(".header_block2").fadeToggle();
+
+                    })
+
+
+                    $( "#accordion1" ).accordion({
+                        heightStyle: "content"
+                    });
+                    $( "#accordion2" ).accordion({
+                        heightStyle: "content"
+                    });
+                    $( "#accordion3" ).accordion({
+                        heightStyle: "content"
+                    });
+                    $( "#accordion4" ).accordion({
+                        heightStyle: "content"
+                    });
+                    $( "#accordion5" ).accordion({
+                        heightStyle: "content"
+                    });
+                    $( "#accordion6" ).accordion({
+                        heightStyle: "content"
+                    });
+                    $( "#accordion7" ).accordion({
+                        heightStyle: "content"
+                    });
+                    $( "#accordion8" ).accordion({
+                        heightStyle: "content"
+                    });
+                    $( "#accordion9" ).accordion({
+                        heightStyle: "content"
+                    });
+                    $( "#accordion10" ).accordion({
+                        heightStyle: "content"
+                    });
+                });
+            </script>
+            <script type="text/javascript">
+                var nextIndex = 0;
+                var	prevIndex = 0;
+                var nextIndex2 = 0;
+                var	prevIndex2 = 0;
+                var index = 0;
+
+                function home_onAfter(curr, next, opts) {
+                    index = opts.currSlide;
+                    /*$('.prev')[index == 0 ? 'hide' : 'show']();
+                    $('.next')[index == opts.slideCount - 1 ? 'hide' : 'show']();
+                    $(next).addClass('active');*/
+
+                    nextIndex = index + 1;
+                    prevIndex = index - 1;
+
+                    $('#pagination_ul li a').each(function(index) {
+                        $(this).removeClass('act_2')
+                    });
+                    index = index+1;
+                    $('#pagination_ul li a#'+index).addClass('act_2');
+                }
+
+                function landing_onAfter(curr, next, opts) {
+                    index = opts.currSlide;
+                    /*$('.prev')[index == 0 ? 'hide' : 'show']();
+                    $('.next')[index == opts.slideCount - 1 ? 'hide' : 'show']();
+                    $(next).addClass('active');*/
+
+                    nextIndex2 = index + 1;
+                    prevIndex2 = index - 1;
+
+                    $('#pagination_ul2 li a').each(function(index) {
+                        $(this).removeClass('act_3')
+                    });
+                    index = index+1;
+                    $('#pagination_ul2 li a#'+index).addClass('act_3');
+                }
+                $( window ).load(function() {
+                    $('#home_slider').cycle({
+                        fx:     'scrollLeft',
+                        slideResize: true,
+                        containerResize: true,
+                        width: '100%',
+                        height: 'auto',
+                        after: home_onAfter,
+                        fit: 1,
+                        timeout: 5000,
+                        speed:   1000
+                    });
+
+                    $('#landing_slider').cycle({
+                        fx:     'scrollLeft',
+                        slideResize: true,
+                        containerResize: true,
+                        width: '100%',
+                        height: 'auto',
+                        after: landing_onAfter,
+                        fit: 1,
+                        timeout: 5000,
+                        speed:   1000
+                    });
+                });
+                $(function(){
+                    $(".next_arw").click(function () {
+                        $('#landing_slider').cycle(nextIndex2, "scrollLeft");
+                    });
+
+                    $(".prev_arw").click(function () {
+                        $('#landing_slider').cycle(prevIndex2, "scrollRight");
+                    });
+
+                    $("#pagination_ul li a").click(function () {
+                        var id = parseInt($(this).attr('id'));
+                        //alert(index);
+                        if(id>index-1){
+                        //alert(id);
+                            $('#home_slider').cycle(id-1, "scrollLeft");
+                        }else{
+                        //alert(id);
+                            $('#home_slider').cycle(id-1, "scrollRight");
+                        }
+                    });
+
+                    $("#pagination_ul2 li a").click(function () {
+                        var id = parseInt($(this).attr('id'));
+                        if(id>index-1){
+                            $('#landing_slider').cycle(id-1, "scrollLeft");
+                        }else{
+                            $('#landing_slider').cycle(id-1, "scrollRight");
+                        }
+                    });
+
+                    $("#landing_slider li").each(function () {
+                        var height1 = 0;
+                        var height = $(this).find('img').height();
+                        if(height>height1){
+                            height1 = height;
+                        }
+                        var div_height = $(this).find('.content_box').height();
+                        //alert(div_height);
+                    });
+
+                    $("#toTop").click(function() {
+                        $("html, body").animate({scrollTop: $('#hashblock').offset().top }, 1000);
+                    });
+
+                });
+            </script>
+        </head>
+        <body class="page page-id-263 page-template page-template-contact page-template-contact-php masthead-fixed full-width singular">
+            <div class="wrapper">
+                <div id="header" style="height: 60px;">
+                    <div class="header_block1">
+                        <div class="logo"><a href="https://www.yale-nus.edu.sg/" target="_blank"><img src="https://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/images/logo.png" alt="" /></a></div><!--/logo-->
+                        <!--<div class="hdr_top"><a href="https://admissions.yale-nus.edu.sg">Admissions</a></div>&lt;!&ndash;/hdr_top&ndash;&gt;-->
+                    </div><!--/header_block1-->
+
+                    <div class="header-button">
+                        <a href="#" class="button"></a>
+                    </div>
+
+                    <div class="header_block2">
+                        <div class="nav_blk">
+                            <ul>
+                                <li><a href="http://admissions.yale-nus.edu.sg/why-yale-nus/" class="prd">Why Yale-NUS</a>
+                                    <ul class="drp_blk">
+                                        <li><a href="http://admissions.yale-nus.edu.sg/why-yale-nus/a-world-class-education/">A World-Class Education</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/why-yale-nus/a-faculty-of-the-worlds-brightest-minds/">A Faculty of The World's Brightest Minds</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/why-yale-nus/a-global-student-body/">A Global Student Body</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/why-yale-nus/international-experiences-and-internships/">International Experiences and Internships</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/why-yale-nus/real-leadership-experiences-now/">Real Leadership Experiences Now</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/why-yale-nus/immersive-residential-colleges/">Immersive Residential Colleges</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="http://admissions.yale-nus.edu.sg/discover/" class="prd">Discover</a>
+                                    <ul class="drp_blk drp_blk2">
+                                        <li><a href="http://admissions.yale-nus.edu.sg/discover/the-community/">The Community</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/discover/the-campus/">The Campus</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/research/">Research</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="http://admissions.yale-nus.edu.sg/apply/" class="prd">Apply</a>
+                                    <ul class="drp_blk" style="width:255px;">
+                                        <li><a href="http://admissions.yale-nus.edu.sg/apply/#who-do-we-look-for">Who We Look For</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/apply/#application-deadlines">Application Deadlines</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/apply/#application-checklists">Application Checklists</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/apply/#double-degree-programme-with-law">Double Degree Programme with Law</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/apply/#apply-now">Apply Now</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="http://admissions.yale-nus.edu.sg/afford/" class="prd">Afford</a>
+                                    <ul class="drp_blk" style="width:200px;">
+                                        <li><a href="http://admissions.yale-nus.edu.sg/afford/#tuition-and-fees">Tuition and Fees</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/afford/#merit-based-scholarships">Merit-based Scholarships</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/afford/#need-based-study-awards">Need-based Study Awards</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/afford/#other-financial-aid-schemes">Other financial aid schemes</a></li>
+                                    </ul>
+                                </li>
+                                <!-- <li><a href="https://www.yalenusadmissionsblog.com/" target="_blank">Blog</a></li> -->
+                                <li><a href="http://admissions.yale-nus.edu.sg/contact-visit-us/" class="prd">Contact &amp; Visit Us</a>
+                                    <ul class="drp_blk" style="width:215px;">
+                                        <li><a href="http://admissions.yale-nus.edu.sg/contact-visit-us/#visit-us">Visit Us</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/contact-visit-us/#campus-map">Campus Map</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/contact-visit-us/#contact-us">Contact Us</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/contact-visit-us/#yale-nus-mailing-list">Yale-NUS Mailing List</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/contact-visit-us/#admissions-team">Admissions Team</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/contact-visit-us/#admissions-fellows">Admissions Fellows</a></li>
+                                        <li><a href="http://admissions.yale-nus.edu.sg/wp-content/uploads/2016/09/29-Sep-2016-Prospectus_LR.pdf" target="_blank">Prospective Student Brochure</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="http://admissions.yale-nus.edu.sg/faq/" >FAQs</a></li>
+                                <li><a href="http://admissions.yale-nus.edu.sg/contact-visit-us/#yale-nus-mailing-list">Mailing List</a></li>
+                            </ul>
+                        </div><!--/nav_blk-->
+
+                        <div class="fb_blk">
+                            <a href="http://www.facebook.com/yalenusadmissions" target="_blank" class="tooltip">&nbsp;</a>
+                            <span class="facebook-info">Visit Yale-NUS Admissions on Facebook</span>
+                        </div><!--/fb_blk-->
+                        <div class="insta_blk">
+                            <a href="http://www.instagram.com/yalenusadmissions/" target="_blank" class="tooltip">&nbsp;</a>
+                            <span class="facebook-info">Follow us on instagram for updates</span>
+                        </div><!--/fb_blk-->
+                        <!--&nbsp;-->
+                        <div class="apply_btn"><a href="https://admissions.yale-nus.edu.sg/apply/#apply-now">Apply Now</a></div><!--/apply_btn-->
+                    </div><!--/header_block2-->
+                </div><!--/header-->
+
+                <script type="text/javascript">
+                    window.onhashchange = locationHashChanged;
+                    function locationHashChanged(){
+                        var hash = window.location.hash;
+                        if(hash == '#visit-us'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd1add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts1').fadeIn();
+                        }
+
+                        if(hash == '#campus-map'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd6add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts6').fadeIn();
+                        }
+
+                        if(hash == '#contact-us'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd2add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts2').fadeIn();
+                        }
+
+                        if(hash == '#yale-nus-mailing-list'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd3add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts3').fadeIn();
+                            $('#all_div').css('display', 'none');
+                            $('#newsletter_div').css('display', 'block');
+                        }
+
+                        if(hash == '#admissions-team'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd4add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts4').fadeIn();
+                        }
+
+                        if(hash == '#admissions-fellows'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd7add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts7').fadeIn();
+                        }
+
+                        if(hash == '#prospective-student-brochure'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd4add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts4').fadeIn();
+                        }
+                    }
+
+                    $(function() {
+                        var hash = window.location.hash;
+                        if(hash == '#visit-us'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd1add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts1').fadeIn();
+                        }
+
+                        else if(hash == '#campus-map'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd6add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts6').fadeIn();
+                        }
+                        else if(hash == '#contact-us'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd2add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts2').fadeIn();
+                        }
+
+                        else if(hash == '#yale-nus-mailing-list'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd3add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts3').fadeIn();
+                            $('#all_div').css('display', 'none');
+                            $('#newsletter_div').css('display', 'block');
+                        }
+
+                        else if(hash == '#admissions-team'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd4add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts4').fadeIn();
+                        }
+
+                        else if(hash == '#admissions-fellows'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd7add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts7').fadeIn();
+                        }
+
+                        else if(hash == '#prospective-student-brochure'){
+                            $('html, body').animate({
+                                scrollTop: $( '#hashblock' ).offset().top
+                            }, 500);
+
+                            $('.tabs_con_inneradd2').hide();
+                            $('ul.latest_newsadd2 li a').removeClass('act_6');
+                            $('ul.latest_newsadd2 li.tsd4add a').addClass('act_6');
+                            $('.tabs_conadd2 .ts4').fadeIn();
+                        }
+
+                        else{
+                            $("html, body").animate({scrollTop: $('#hashblock').offset().top }, 1000);
+                        }
+
+
+                        $('ul.latest_newsadd2 li.tsd1add a').click( function(){
+                            $('#all_div').css('display', 'block');
+                            $('#newsletter_div').css('display', 'none');
+                        });
+                        $('ul.latest_newsadd2 li.tsd2add a').click( function(){
+                            $('#all_div').css('display', 'block');
+                            $('#newsletter_div').css('display', 'none');
+                        });
+                        $('ul.latest_newsadd2 li.tsd3add a').click( function(){
+                            $('#all_div').css('display', 'none');
+                            $('#newsletter_div').css('display', 'block');
+                        });
+                        $('ul.latest_newsadd2 li.tsd4add a').click( function(){
+                            $('#all_div').css('display', 'block');
+                            $('#newsletter_div').css('display', 'none');
+                        });
+                        $('ul.latest_newsadd2 li.tsd5add a').click( function(){
+                            $('#all_div').css('display', 'block');
+                            $('#newsletter_div').css('display', 'none');
+                        });
+                        $('ul.latest_newsadd2 li.tsd6add a').click( function(){
+                            $('#all_div').css('display', 'block');
+                            $('#newsletter_div').css('display', 'none');
+                        });
+
+                    });
+                </script>
+
+                <div id="container">
+                    <div class="commonblock_1">
+                        <div class="commonblock_2">
+                            <script type="text/javascript">
+                              function iframeLoaded() {
+                                  var iFrameID = document.getElementById('theFrame');
+                                  if(iFrameID) {
+                                        // here you can make the height, I delete it first, then I make it again
+                                        iFrameID.height = "";
+                                        iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
+                                  }
+                              }
+                              function resizeIframe(iframe) {
+                                iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+                              }
+                            </script>
+
+                            <apex:iframe id="theFrame" scrolling="true" html-onload="iframeLoaded();" html-onchange="iframeLoaded();" src="https://dev-yale-nus.cs31.force.com/YNC360/RECForm?department=Research+Ethics+Committee&subdepartment=REC&toe=REC+Form+Submission&status=new" height="1420"/>
+                        </div>
+                    </div>
+
+                    <!--<div class="commonblock_1 bg_blk4" id="all_div">-->
+                        <!--<div class="content_block landing_page">-->
+                            <!--<div class="landin_slider custom">-->
+                                <!--<ul>-->
+                                    <!--<li style="background-image:url(http://admissions.yale-nus.edu.sg/wp-content/uploads/2014/09/16newworldclassed-1.jpg)">-->
+                                        <!--&lt;!&ndash; <img src="" alt="" /> &ndash;&gt;-->
+                                        <!--<div class="slider_content">-->
+                                            <!--<table style="width: 100%; height:100%">-->
+                                                <!--<tr height="100%">-->
+                                                    <!--<td valign="middle" style="text-align: center; vertical-align: middle; height:100%">-->
+                                                        <!--<div class="slidercon_block2">-->
+                                                            <!--<div class="sld_box">-->
+                                                                <!--<h1 style="padding:0px 50px 26px 50px;">Student Landing Page</h1>-->
+                                                            <!--</div>&lt;!&ndash;/content_bottom_box&ndash;&gt;-->
+                                                        <!--</div>&lt;!&ndash;/slidercon_block1&ndash;&gt;-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
+                                            <!--</table>-->
+                                        <!--</div>&lt;!&ndash;/slider_content&ndash;&gt;-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                                <!--<span class="dsv_blk"><a href="#" class="down_arrow"><img src="http://admissions.yale-nus.edu.sg/wp-content/themes/ync-rps-new/images/discover-slider/ds_arrow-down.png" alt="" /></a></span>-->
+                            <!--</div>&lt;!&ndash;/landin_slider&ndash;&gt;-->
+
+                        <!--</div>&lt;!&ndash;/content_block&ndash;&gt;-->
+                    <!--</div>&lt;!&ndash;/commonblock_1&ndash;&gt;-->
+
+                    <!--<div class="commonblock_1 bg_blk4" id="hashblock">-->
+                        <!--<div class="commonblock_2">-->
+                            <!--<div class="apply_tab_block">-->
+                                <!--<div class="tab_menu_2">-->
+                                    <!--<div class="tab_menu-top">-->
+
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="back_btn"><a href="javascript:void(0);" id="toTop">Back to Top</a></div>-->
+                                <!--<div class="tab_content_wrap2 tabs_conadd2">-->
+                                    <!--<div class="tab_common apply_tab_con_1 gap_7 ts1 tabs_con_inneradd2">-->
+
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="commonblock_1 bg_blk3">
+                    <div class="commonblock_4">
+                        <div class="bottom_menu">
+                            <ul>
+                                <li><a href="http://admissions.yale-nus.edu.sg/faq/">FAQs</a></li>
+                                <li><a href="http://admissions.yale-nus.edu.sg/contact-visit-us/">Contact Us</a></li>
+                                <li><a href="https://apply.yale-nus.edu.sg/apply/" target="_blank">Apply now</a></li>
+                            </ul>
+                        </div><!--/bottom_menu-->
+
+                    </div><!--/commonblock_4-->
+                </div><!--/commonblock_1-->
+            </div>
+        </body>
+    </html>
+</apex:page>

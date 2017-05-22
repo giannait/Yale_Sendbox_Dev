@@ -1,0 +1,37 @@
+<apex:page controller="VRNotePDFController" showHeader="false" renderAs="pdf">
+    <apex:stylesheet value="{!$Resource.CssPDF}"/>
+    
+    <apex:form >
+        <apex:image value="{!$Resource.YaleLogo}" height="50px" width="250px"/>
+        <br/><br/>
+        <div>
+            <b>Vice Rector Note - Approval Notice</b>
+        </div>
+        <apex:pageBlock >
+        	<apex:pageBlockSection title="Student Informations" columns="2">
+            	<apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matric_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+                <apex:outputField value="{!rc.Name}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Message" columns="1">
+            	<div>
+                    This is to confirm that <b>{!contact.Name}</b> has been granted a Vice-Rector’s Note by <b>{!vrNote.VR__c}</b> for Date of VRN. The student will be in contact with you, to make arrangements for any work missed.
+                    Should you have any questions about this note, do not hesitate to contact the RespectiveRCVice-Rector’s Office.
+                    <br/><br/><br/><br/>
+                    <small>
+                        <b>Note:</b> Vice-Rector’s Notes (VRN) are mainly for the postponement of an assignment or exam.
+                        The residential college Vice-Rector may give permission for a student to make up work missed or delayed during the term because of an incapacitating illness,
+                        the death of a family member, or a comparable emergency. The residential college Vice-Rector also has authority to give permission to make up work missed because of theobservance of religious holy days.
+                        Inall other casesof work missed during the term, permission to makeup course work must be secured directly from the Module Professor, since the Professor is the only person who can decide, in the context of the nature and requirements of the module, whether such permission is appropriate.
+                        If there was any work due during the period, covered by the VRN. The Professor will arrange with the student to submit the work (without grade penalties) at a later date. The VRN also covers the student’s absence from classes (without grade penalties).
+                    </small>
+                </div>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

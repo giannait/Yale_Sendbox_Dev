@@ -1,0 +1,115 @@
+<apex:page controller="CaseViewController" showHeader="false" cache="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <apex:form id="form">
+        <apex:messages id="messages"/>
+        
+        <apex:pageBlock id="block" title="Your submitted requests">
+        	<apex:pageBlockSection id="informationSection" title="Student Information" columns="1">
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Name}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="casesSection" title="Open Requests" columns="1">
+            	<apex:pageBlockTable id="table" value="{!cases}" var="case">
+                    <apex:column headerValue="{!$ObjectType.Case.fields.CaseNumber.Label}">
+                        <apex:outputLabel value="{!case.CaseNumber}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Case.fields.Type_Of_Enquiry__c.Label}">
+                        <apex:outputLabel value="{!case.Type_Of_Enquiry__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Case.fields.Department__c.Label}">
+                        <apex:outputLabel value="{!case.Department__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Case.fields.Sub_Department__c.Label}">
+                        <apex:outputLabel value="{!case.Sub_Department__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Date of Enquiry">
+                        <apex:outputText value="{0,date,dd MMMM yyyy}"> <apex:param value="{!case.CreatedDate}" /> </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Action">
+                        <apex:commandLink action="/apex/CaseDetail?cid={!case.Id}" value="Reply" styleClass="btn"/>
+                        <!--
+                        <apex:commandLink action="{!closeCase}" onclick="return confirm('Are you sure want to cancel this case?');"  value="Cancel"  styleClass="btn">
+                        	<apex:param name="cid" value="{!case.Id}"/>
+                        </apex:commandLink>
+						-->
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="posSection" title="Plan of Study" columns="1">
+            	<apex:pageBlockTable id="posTable" value="{!pos}" var="p">
+                	<apex:column headerValue="{!$ObjectType.Plan_Of_Study__c.fields.Year_Of_Study__c.Label}">
+                        <apex:outputField value="{!p.Year_Of_Study__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Plan_Of_Study__c.fields.Faculty_Advisor__c.Label}">
+                        <apex:outputField value="{!p.Faculty_Advisor__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Plan_Of_Study__c.fields.Head_of_Studies__c.Label}">
+                        <apex:outputField value="{!p.Head_of_Studies__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Plan_Of_Study__c.fields.Capstone_Advisor__c.Label}">
+                        <apex:outputField value="{!p.Capstone_Advisor__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="aprSection" title="Academic Progress Reports" columns="1">
+                <apex:pageBlockTable id="aprTable" value="{!progressReports}" var="pr">
+                	<apex:column headerValue="{!$ObjectType.Progress_Report__c.fields.Year_of_Study__c.Label}">
+                        <apex:outputText value="{!pr.Year_of_Study__c}"></apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Progress_Report__c.fields.Faculty_Advisor__c.Label}">
+                        <apex:outputText value="{!pr.Faculty_Advisor__c}"></apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Progress_Report__c.fields.Head_of_Study__c.Label}">
+                        <apex:outputText value="{!pr.Head_of_Study__c}"></apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Progress_Report__c.fields.Capstone_Advisor__c.Label}">
+                        <apex:outputText value="{!pr.Capstone_Advisor__c}"></apex:outputText>
+                    </apex:column>
+                    <!--
+                    <apex:column headerValue="Action">
+                        <apex:commandLink action="{!prEdit}" value="Edit"  styleClass="btn">
+                        	<apex:param name="pid" value="{!pr.Id}"/>
+                        </apex:commandLink>
+                        <apex:commandLink action="{!prDelete}" onclick="return confirm('Are you sure want to delete this progress report?');" value="Delete"  styleClass="btn">
+                        	<apex:param name="pid" value="{!pr.Id}"/>
+                        </apex:commandLink>
+                    </apex:column>
+					-->
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="vrNoteSection" title="Vice Rector Notes" columns="1">
+            	<apex:pageBlockTable id="vrNoteTable" value="{!vrNotes}" var="vr">
+                	<apex:column headerValue="{!$ObjectType.Vice_Rector_Note__c.fields.Name.Label}">
+                        <apex:outputText value="{!vr.Name}"></apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Vice_Rector_Note__c.fields.Type__c.Label}">
+                        <apex:outputText value="{!vr.Type__c}"></apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Vice_Rector_Note__c.fields.Date_Issued__c.Label}">
+                        <apex:outputText value=""></apex:outputText>
+                        <apex:outputText value="{0, date, dd MMMM yyyy}">
+    						<apex:param value="{!vr.Date_Issued__c}" /> 
+						</apex:outputText>
+                    </apex:column>
+                    <!--
+                    <apex:column headerValue="Action">
+                        <apex:commandLink action="{!vrNoteUpdate}" value="Edit"  styleClass="btn">
+                        	<apex:param name="vid" value="{!vr.Id}"/>
+                        </apex:commandLink>
+                        <apex:commandLink action="{!vrNoteDelete}" onclick="return confirm('Are you sure want to delete this vice rector note?');" value="Delete"  styleClass="btn">
+                        	<apex:param name="vid" value="{!vr.Id}"/>
+                        </apex:commandLink>
+                    </apex:column>
+-->
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+                
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,37 @@
+<apex:page action="{!onLoad}" controller="CaseController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <apex:form id="form" enctype="multipart/form-data">
+        <apex:messages />
+        
+        <apex:pageBlock id="block" title="Student General Enquiry Form">
+            <apex:pageBlockSection id="informationSection" title="Student Information" columns="2">
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!c.Department__c}"/>
+                <apex:outputField value="{!c.Sub_Department__c}"/>
+                <apex:outputField value="{!c.Type_Of_Enquiry__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="detailSection" title="Additional Details" columns="1">
+                <apex:inputField value="{!c.Start_Date__c}"/>
+                <apex:inputField value="{!c.End_Date__c}"/>
+                <apex:inputField value="{!c.Modules_Impacted__c}"/>
+                <apex:inputField value="{!c.Faculty_Advisor__c}"/>
+                <apex:inputField value="{!c.Description}"/>
+                
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="Attachment File" for="attachment"/>
+                    <apex:inputFile id="attachment" fileName="{!attachment.Name}" value="{!attachment.Body}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

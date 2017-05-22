@@ -1,0 +1,109 @@
+<apex:page action="{!onLoad}" controller="GeneralEnquiryFormController" showHeader="false" cache="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    <style>
+        .textarea{
+        	width : 99%;
+        	height : 150px;
+        }
+    </style>
+    <script>
+        function validateFileUpload(e){
+            var file;
+            var alertComp = document.getElementsByClassName("alertComp")[0];
+            var attachment = document.getElementsByClassName("attachment")[0];
+            var validationError = false;
+
+            alertComp.innerHTML = "";
+            alertComp.display = "none";
+
+            if(attachment.files[0]){
+                file = attachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("Attachment file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(validationError){
+                window.scrollTo(0, 0);
+                e.preventDefault();
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function showError(message){
+            var alertComp = document.getElementsByClassName("alertComp")[0];
+            alertComp.removeAttribute("style");
+            alertComp.innerHTML += "<li>" + message + "</li>";
+        }
+    </script>
+    
+    <apex:form id="form" enctype="multipart/form-data" onsubmit="validateFileUpload(event);">
+        <apex:messages id="messages"/>
+        <ul role="alert" class="alert alertComp" style="display:none;"></ul>
+        
+        <apex:pageBlock id="block" title="General Enquiry">
+            <apex:pageBlockSection id="studentSection" title="Student Detail" columns="2">
+                <apex:outputField value="{!contact.Name}"></apex:outputField>
+                <apex:outputField value="{!contact.Matric_Year__c}"></apex:outputField>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"></apex:outputField>
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Year of Study"/>
+                    <apex:outputText value="{!contact.Current_Year__c}"></apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputField value="{!contact.Email}"></apex:outputField>
+            </apex:pageBlockSection>
+            
+            <!--
+            <apex:pageBlockSection id="enquirySection" title="Enquiry Detail" columns="1">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Department"/>
+                    <apex:outputText value="{!department}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Sub Department"/>
+                    <apex:outputText value="{!subDepartment}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+			-->
+            
+            <apex:pageBlockSection id="messageSection" title="Message" columns="1">
+                <apex:outputpanel layout="block">
+                    <i><apex:outputlabel value="{!fileSizeMessage}" style="color:red;font-size:small;"/></i>
+                </apex:outputpanel>
+
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Type of Enquiry" />
+                    <apex:inputtext value="{!typeOfEnquiry}"/>
+
+                    <!--
+                    <apex:selectlist size="1" value="{!typeOfEnquiry}">
+                        <apex:selectoptions value="{!toeOptions}"/>
+                    </apex:selectlist>-->
+                </apex:pageblocksectionitem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Your Message"/>
+                    <apex:inputTextarea html-placeholder="Input your message here" value="{!cc.CommentBody}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="{!attachmentLabel}" for="attachment"/>
+                	<apex:inputFile id="attachment" fileName="{!attachment.Name}" value="{!attachment.Body}" styleclass="attachment"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+            	<apex:outputPanel layout="block">
+                	<apex:commandButton action="{!save}" value="Submit"/>
+                	<apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

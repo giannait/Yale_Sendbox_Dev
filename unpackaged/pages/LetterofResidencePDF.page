@@ -1,0 +1,65 @@
+<apex:page controller="LetterofResidencePDFController" showHeader="false" renderAs="pdf">
+    <apex:form id="form">
+    	<apex:pageBlock >
+            <apex:image value="{!$Resource.YaleLogo}" height="60" width="200"/>
+            <br/><br/><br/><br/>
+        	<apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="{!today}"></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <br/>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="TO WHOM IT MAY CONCERN"></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <br/><br/><br/>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Dear {!contact.Name},"></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <br/>
+				<apex:pageBlockSectionItem >
+                	<apex:outputLabel value="This letter serves to certify that the student is a matriculated student residing at Yale-NUS College."></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <br/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="Name"/>
+                	<apex:outputField value="{!contact.Name}"/>    
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="Matriculation No."/>
+                	<apex:outputField value="{!contact.Student_Identity__c}"/>    
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="Passport No."/>
+                	<apex:outputField value="{!passport.Name}"/>    
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="Degree"/>
+                	<apex:outputField value="{!contact.Degree_Name__c}"/>    
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Candidature Start Date"></apex:outputLabel>
+                    <apex:outputField value="{!c.Start_Date__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputField value="{!rc.Name}"/>
+                <br/>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Unless studying abroad or engaging in approved activities/programmes, students are required to take residence on campus as part of their academic requirement (including Semester breaks)."></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <br/>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="If there are further queries, please do not hesitate to contact the Senior Executive."></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <br/><br/>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Thank you."></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <br/><br/>
+				<apex:pageBlockSectionItem >
+                	<apex:outputLabel value="THIS IS A COMPUTER-GENERATED LETTER. NO SIGNATURE IS REQUIRED." style="font-size:8px;"></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

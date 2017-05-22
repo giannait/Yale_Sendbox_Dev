@@ -1,0 +1,67 @@
+<apex:page action="{!onLoad}" controller="IgniteApplicationController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <style>
+        .justifyText{
+            text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+            width : 99%;
+            height : 150px;
+        }
+    </style>
+    
+    <apex:form id="form">
+        <apex:messages id="messages"/>
+        
+        <apex:pageBlock id="block" title="Ignite Application">
+            <apex:pageBlockSection columns="1">
+                <!--<div class="justifyText">-->
+                    Ignite! is a multi-session program aimed at bringing out the leader in you as you learn to face your fears, tackle real-life challenges you are facing, set achievable goals, and increase your impact on the world. Whether you are already in a position of leadership or simply keen to grow in self-awareness, this program is for you.<br/>
+                    <br/>
+                    To learn more about, visit <a href="http://cipe.yale-nus.edu.sg/leadership-global-citizenship/courses-workshops/ignite/">ignite</a>.<br/>
+                    <br/>
+                    Please fill out the following questions and submit
+                <!--</div>-->
+            </apex:pageBlockSection>
+            
+            <!--
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matrix_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+            </apex:pageBlockSection>
+            -->
+            
+            <apex:pageBlockSection id="detailSection" title="Detail Page" columns="1">
+                <apex:outputField value="{!leadership.Full_Name__c}"/>
+                <apex:outputField value="{!leadership.Class_Year__c}"/>
+                <apex:outputField value="{!leadership.Email__c}"/>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="How will Ignite help you achieve your leadership goals?"></apex:outputLabel>
+                    <apex:inputTextArea value="{!leadership.Leadership_Goals__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="What do you have to do to make this a meaningful experience?"></apex:outputLabel>
+                    <apex:inputTextArea value="{!leadership.Experience__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

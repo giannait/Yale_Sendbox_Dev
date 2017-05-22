@@ -1,0 +1,13 @@
+<apex:page controller="CaseResultController" showHeader="false">
+    <apex:form >
+        <apex:pageBlock title="{!title}">
+            <apex:pageBlockButtons location="bottom">
+            	<apex:commandButton action="{!casesView}" value="Ok" style="width:100px;"/>
+            </apex:pageBlockButtons>
+            
+        	<apex:outputPanel layout="block">
+                {!result}<br/>
+        	</apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

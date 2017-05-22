@@ -1,0 +1,60 @@
+<apex:page action="{!onLoad}" controller="NGOBootcampApplicationController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <style>
+        .justifyText{
+            text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+            width : 99%;
+            height : 150px;
+        }
+    </style>
+    
+    <apex:form id="form">
+        <apex:messages id="messages"/>
+        
+        <apex:pageBlock id="block" title="NGO Bootcamp Application">
+            
+            <apex:pageBlockSection columns="1">
+                Interested in a summer experience that will foster knowledge, skills, humility, courage, and leadership while helping to make a change in this world?<br/>
+                <br/>
+                <a href="https://cipe.yale-nus.edu.sg/summer-opportunities/ngo-bootcamp" target="_blank">NGO Bootcamp</a> is a training and internship program focused on exposing you to all there is to know about social impact and public interest work. Facilitated by corporate and nonprofit experts, NGO Bootcamp aims to equip you with the knowledge and skills necessary to make a difference in Singapore and the world.<br/>
+                <br/>
+            </apex:pageBlockSection>
+            
+            <!--
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matrix_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+            </apex:pageBlockSection>
+            -->
+            
+            <apex:pageBlockSection id="detailSection" title="Detail Page" columns="1">
+                <apex:outputField value="{!leadership.Full_Name__c}"/>
+                <apex:outputField value="{!leadership.Class_Year__c}"/>
+                <apex:outputField value="{!leadership.Email__c}"/>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Why do you want to attend NGO Bootcamp?"></apex:outputLabel>
+                    <apex:inputField value="{!leadership.Description__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,69 @@
+<apex:page controller="GeneralEnquiryController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    
+    <apex:form id="form">
+        <apex:pageBlock id="block" title="General Enquiry">
+            <apex:pageBlockSection id="studentSection" title="Student Information">
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Name}"/>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Department"></apex:outputLabel>
+                    <apex:outputLabel value="{!department}"></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Sub Department"></apex:outputLabel>
+                    <apex:outputLabel value="{!subDepartment}"></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="departmentSection" title="List Of Department" rendered="{!showDepartment}">
+                <apex:pageBlockTable id="departmentTable" value="{!departments}" var="d" columnsWidth="40%,60%" style="width: 1200px;">
+                    <apex:column headerValue="{!$ObjectType.Department__c.fields.Name.Label}">
+                        <apex:commandLink action="{!pickDepartment}" value="{!d.Name}" reRender="form">
+                            <apex:param name="department" value="{!d.Name}"/>
+                        </apex:commandLink>
+                        
+                        <apex:facet name="footer">
+                            <apex:commandButton action="{!back}" value="Student Landing Page"/>
+                        </apex:facet>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Department__c.fields.Description__c.Label}">
+                        <apex:outputLabel value="{!d.Description__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="subDepartmentSection" title="List Of Sub Department" rendered="{!showSubDepartment}">
+                <apex:pageBlockTable id="subDepartmentTable" value="{!subDepartments}" var="sd" columnsWidth="40%,60%" style="width: 1200px;">
+                    <apex:column headerValue="{!$ObjectType.Department__c.fields.Name.Label}">
+                        <apex:commandLink action="{!pickSubDepartment}" value="{!sd.Name}" reRender="form">
+                            <apex:param name="subDepartment" value="{!sd.Name}"/>
+                        </apex:commandLink>
+                        
+                        <apex:facet name="footer">
+                            <apex:commandButton action="{!prevSubDepartment}" value="Prev" reRender="form"/>
+                        </apex:facet>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Department__c.fields.Description__c.Label}">
+                        <apex:outputLabel value="{!sd.Description__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="typeOfEnquirySection" title="List Of Type of Enquiry" rendered="{!showTypeOfEnquiry}">
+                <apex:pageBlockTable id="typeOfEnquiryTable" value="{!toes}" var="toe">
+                    <apex:column headerValue="Name">
+                        <apex:commandLink action="{!toe.Link__c + 'department='+department+'&subdepartment='+subDepartment+'&toe='+toe.Name+'&status=new'}" value="{!toe.Name}"/>
+                        
+                        <apex:facet name="footer">
+                            <apex:commandButton action="{!prevTypeOfEnquiry}" value="Prev" reRender="form"/>
+                        </apex:facet>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

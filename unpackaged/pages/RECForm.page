@@ -1,0 +1,268 @@
+<apex:page id="page" action="{!onLoad}" controller="RECFormController" showheader="false" sidebar="false" cache="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+
+    <style>
+        .justify{
+            text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+
+        .textarea{
+            width : 99%;
+            height : 150px;
+        }
+
+        .text{
+            width : 250px;
+        }
+
+        .mainTitle{
+            width: 500px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var requiredElements = document.getElementsByClassName("isRequired");
+
+            for(var i=0 ; requiredElements.length ; i++){
+                requiredElements[i].required = true;
+            }
+        }
+
+        function validation(e){
+            var file;
+            var btnValue = document.activeElement.getAttribute('value');
+            var alertComp = document.getElementsByClassName("alertComp")[0];
+            var supervisor = document.getElementsByClassName("supervisor")[0];
+            var headOfStudy = document.getElementsByClassName("headOfStudy")[0];
+            var humanAttachment = document.getElementsByClassName("humanAttachment")[0];
+            var rescueAttachment = document.getElementsByClassName("rescueAttachment")[0];
+            var chserAttachment = document.getElementsByClassName("chserAttachment")[0];
+            var participantAttachment = document.getElementsByClassName("participantAttachment")[0];
+            var informedAttachment = document.getElementsByClassName("informedAttachment")[0];
+            var fieldworkAttachment = document.getElementsByClassName("fieldworkAttachment")[0];
+            var validationError = false;
+
+            alertComp.innerHTML = "";
+            alertComp.display = "none";
+
+            if(supervisor.value == "none"){
+                showError("Supervisor should not be empty!");
+                validationError = true;
+            }
+
+            if(headOfStudy.value == "none"){
+                showError("Head of Study should not be empty!");
+                validationError = true;
+            }
+
+            if(humanAttachment.value == ""){
+                showError("Human Subjects Training Certificate Attachment should not be empty!");
+                validationError = true;
+            }else{
+                file = humanAttachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("Human Subjects Training Certificate Attachment file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(rescueAttachment.value == ""){
+                showError("RESCUE Attachment should not be empty!");
+                validationError = true;
+            }else{
+                file = rescueAttachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("RESCUE Attachment file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(chserAttachment.files[0]){
+                file = chserAttachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("CHSER Attachment file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(participantAttachment.files[0]){
+                file = participantAttachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("Participant Information Sheet Attachment file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(informedAttachment.files[0]){
+                file = informedAttachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("Informed Consent Form Attachment file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(fieldworkAttachment.files[0]){
+                file = fieldworkAttachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("Fieldwork Safety Plan Attachment file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(btnValue == "Cancel"){
+                validationError = false;
+                humanAttachment.value = "";
+                rescueAttachment.value = "";
+                chserAttachment.value = "";
+                participantAttachment.value = "";
+                informedAttachment.value = "";
+                fieldworkAttachment.value = "";
+            }
+
+            if(validationError){
+                window.scrollTo(0, 0);
+                e.preventDefault();
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function showError(message){
+            var alertComp = document.getElementsByClassName("alertComp")[0];
+            alertComp.removeAttribute("style");
+            alertComp.innerHTML += "<li>" + message + "</li>";
+        }
+    </script>
+
+    <apex:form id="form" enctype="multipart/form-data" onsubmit="validation(event);">
+        <apex:messages />
+        <ul role="alert" class="alert alertComp" style="display:none;"></ul>
+
+        <apex:pageblock title="Safe and Ethical Research Review Process Submission" mode="edit">
+            <apex:outputpanel layout="block" styleclass="justify">
+                Welcome to the submission page for the Research Ethics Committee. You should only
+
+                submit PDFs to this page once you have completed all required forms indicated by <a href="https://yalenus.au1.qualtrics.com/jfe/form/SV_e3Rv2nuSHoMqdP7" target="_blank">RESCUE</a>.
+
+                You will not be able to save this page and upload forms again. Your submission will be
+
+                reviewed by your supervisor and Head of Study you name below, and the REC will review
+
+                cases as necessary. Please review the process on our <a href="https://studentlife.yale-nus.edu.sg/policies/conducting-safe-and-ethical-research/" target="_blank">website</a> if you have any questions.
+            </apex:outputpanel>
+
+            <apex:pageblocksection id="manualSection" columns="1" collapsible="false" title="Supervisors">
+                <apex:outputpanel id="manualPanel" layout="block">
+                    <ol type="1">
+                        <li>
+                            Please select your Capstone or research supervisor by name. If your supervisor’s
+                            name does not appear, please send an email to yncit@yale-nus.edu.sg and include
+                            your supervisor.<br/><br/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                                <apex:selectlist size="1" value="{!supervisorID}" styleclass="text supervisor">
+                                    <apex:selectoptions value="{!supervisorOptions}"/>
+                                </apex:selectlist>
+                            </apex:outputPanel><br/>
+                        </li>
+                        <li>
+                            Please select your Head of Study by name. <br/><br/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                                <apex:selectlist size="1" value="{!headOfStudyID}" styleclass="text headOfStudy" required="true">
+                                    <apex:selectoptions value="{!headOfStudyOptions}"/>
+                                </apex:selectlist>
+                            </apex:outputPanel><br/>
+                        </li>
+                    </ol>
+                </apex:outputpanel>
+            </apex:pageblocksection>
+
+            <apex:pageblocksection id="attachmentSection" columns="1" title="Attachment" collapsible="false">
+                <apex:outputpanel layout="block">
+                    <i><apex:outputlabel value="{!fileSizeMessages}" style="color:red;font-size:small;"/></i>
+                </apex:outputpanel>
+                <apex:outputpanel layout="block">
+                    <ol type="1">
+                        <li>
+                            Please attach a PDF of your <a href="https://phrp.nihtraining.com/users/login.php" target="_blank">Human Subjects Training Certificate</a>.<br/><br/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                                <apex:inputfile filename="{!humanSubjectAttachment.Name}" filesize="{!humanSubjectAttachment.BodyLength}" value="{!humanSubjectAttachment.Body}" styleclass="humanAttachment"/>
+                            </apex:outputPanel><br/>
+                        </li>
+                        <li>
+                            Please attach a PDF of your completed <a href="https://yalenus.au1.qualtrics.com/jfe/form/SV_e3Rv2nuSHoMqdP7" target="_blank">RESCUE</a>. You should have received an email
+                            with the information if you forgot to download the PDF after submitting it.<br/><br/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                                <apex:inputfile filename="{!rescueAttachment.Name}" filesize="{!rescueAttachment.BodyLength}" value="{!rescueAttachment.Body}" styleclass="rescueAttachment"/>
+                            </apex:outputPanel><br/>
+                        </li>
+                        <li>
+                            Please attach a PDF of your completed <a href="https://yalenus.au1.qualtrics.com/jfe/form/SV_cwoaGxedp3dLG8R" target="_blank">CHSER</a>, if applicable. You should have
+                            received an email with the information if you forgot to download the PDF after
+                            submitting it.<br/><br/>
+                            <apex:outputpanel layout="block">
+                                <apex:inputfile filename="{!chserAttchment.Name}" filesize="{!chserAttchment.BodyLength}" value="{!chserAttchment.Body}" styleclass="chserAttachment"/>
+                            </apex:outputpanel><br/>
+                        </li>
+                        <li>
+                            Please attach a PDF or Word Doc of your completed <a href="https://studentlife.yale-nus.edu.sg/wp-content/uploads/sites/48/2017/02/3-Participant-Information-Sheet-PIS_final_172702_PDF.pdf" target="_blank">Participant Information Sheet</a>, if applicable.<br/><br/>
+                            <apex:outputpanel layout="block">
+                                <apex:inputfile filename="{!participantAttachment.Name}" filesize="{!participantAttachment.BodyLength}" value="{!participantAttachment.Body}" styleclass="participantAttachment"/>
+                            </apex:outputpanel><br/>
+                        </li>
+                        <li>
+                            Please attach a PDF or Word Doc of your completed <a href="https://studentlife.yale-nus.edu.sg/wp-content/uploads/sites/48/2017/02/4-Informed-Consent-Form-ICF_Final_172702_PDF.pdf" target="_blank">Informed Consent Form</a>, if
+                            applicable.<br/><br/>
+                            <apex:outputpanel layout="block">
+                                <apex:inputfile filename="{!informedAttachment.Name}" filesize="{!informedAttachment.BodyLength}" value="{!informedAttachment.Body}" styleclass="informedAttachment"/>
+                            </apex:outputpanel><br/>
+                        </li>
+                        <li>
+                            Please attach a PDF or Word Doc of your completed <a href="https://studentlife.yale-nus.edu.sg/wp-content/uploads/sites/48/2017/02/5-Fieldwork-safety-plan-FSP_final_172702_PDF.pdf" target="_blank">Fieldwork Safety Plan</a>, if
+                            applicable.<br/><br/>
+                            <apex:outputpanel layout="block">
+                                <apex:inputfile filename="{!fieldworkAttachment.Name}" filesize="{!fieldworkAttachment.BodyLength}" value="{!fieldworkAttachment.Body}" styleclass="fieldworkAttachment"/>
+                            </apex:outputpanel><br/>
+                        </li>
+                    </ol>
+                </apex:outputpanel>
+            </apex:pageblocksection>
+
+            <apex:pageblocksection id="noteSection" title="Note after submission" columns="1" collapsible="false">
+                <apex:outputpanel layout="block" styleclass="justify">
+                    Thank you for submitting your project for Ethics review! You will be contacted by one of the
+                    members of the Research Ethics Committee in about 2-3 weeks. The REC may request
+                    additional information and suggest necessary changes to the proposed study before granting
+                    approval. Once approval is granted, you may commence research activities. <br/>
+                    <br/>
+                    If you intend to publish your capstone research, you need to submit additional forms for
+                    review by <a href="http://www.nus.edu.sg/irb/forms_sber.html" target="_blank">NUS IRB</a>, with your supervisor as the Principal Investigator.
+                </apex:outputpanel>
+            </apex:pageblocksection>
+
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <!--
+                    <apex:outputlink value="/CaseView?nid={!contact.NUSNET_ID__c}" style="background: transparent!important;background-color: transparent !important;color: #f49644;padding: 10px 20px;" styleclass="btn">Cancel</apex:outputlink>
+                    -->
+                    <apex:commandButton action="{!cancel}" value="Cancel" immediate="true"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+
+</apex:page>

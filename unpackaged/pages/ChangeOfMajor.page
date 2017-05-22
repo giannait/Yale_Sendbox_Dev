@@ -1,0 +1,147 @@
+<apex:page action="{!onLoad}" id="page" controller="ChangeOfMajorController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    <style>
+    	.justify{
+        	text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+        	width : 99%;
+        	height : 150px;
+        }
+
+        .text{
+            width : 300px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function minorPicklistOnChange(){
+            var picklistValue = document.getElementById("page:form:block:minorSection:cdm").value;
+            var cm = document.getElementsByClassName("cm");
+            var nm = document.getElementsByClassName("nm");
+            
+            var affliationText = document.getElementsByClassName("affliationText");
+
+            if(picklistValue == "Drop Minor" || picklistValue == ""){
+                hideElement(cm);
+                hideElement(nm);
+
+                for(var i=0;i<affliationText.length;i++){
+                    affliationText[i].value = "";
+                }
+            }else{
+                showElement(cm);
+                showElement(nm);
+            }
+        }
+
+        function showElement(e){
+            for(var i=0;i<e.length;i++){
+                e[i].removeAttribute('style');
+            }
+        }
+    
+        function hideElement(e){
+            for(var i=0;i<e.length;i++){
+                e[i].style.display = 'none';
+            }
+        }
+    
+        window.onload = function () {
+            var major = document.getElementsByClassName("major")[0];
+            var majorList = document.getElementsByClassName("majorList")[0];
+            
+            if(major.innerHTML != ""){
+            	for(var i=0; i < majorList.options.length; i++){
+                    if(major.innerHTML == majorList.options[i].value){
+                        majorList.remove(i);
+                        break;
+                    }
+                }
+            }
+
+            var minor = document.getElementsByClassName("minor")[0];
+            var minorList = document.getElementsByClassName("minorList")[0];
+
+            if(minor.innerHTML != ""){
+            	for(var i=0; i < minorList.options.length; i++){
+                    if(minor.innerHTML == minorList.options[i].value){
+                        minorList.remove(i);
+                        break;
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <apex:form id="form">
+    	<apex:messages id="messages"/>
+      	
+        <apex:pageBlock id="block" title="Request for Change of Major/Minor">
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matric_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Residential_College__c.fields.Residential_College_Master__c.Label}"/>
+                    <apex:outputText value="{!residentialCollegeName}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="vrSection" title="Change My Major" columns="1">
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Current Major"></apex:outputLabel>
+                    <apex:outputText value="{!currentMajor}" styleClass="major"></apex:outputText>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Change To" />
+                    <apex:inputField value="{!com.New_Major__c}" styleClass="text majorList"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Change_Of_Major__c.fields.Major_Head_Of_Study__c.Label}"/>
+                    <apex:selectlist size="1" value="{!com.Major_Head_Of_Study__c}" styleclass="text">
+                        <apex:selectoptions value="{!hosMajorList}"/>
+                    </apex:selectlist>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection id="minorSection" title="Change / Drop My Minor" columns="1" rendered="true">
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="cm" labelStyle="display:none;" labelStyleClass="cm">
+                    <apex:outputLabel value="Current Minor"></apex:outputLabel>
+                    <apex:outputText value="{!currentMinor}" styleclass="minor"></apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:inputField id="cdm" value="{!com.Change_Drop_Minor__c}" styleClass="text cdm" onchange="minorPicklistOnChange();"/>
+
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="nm" labelStyle="display:none;" labelStyleClass="nm">
+                    <apex:outputLabel value="Change To" />
+                    <apex:inputField value="{!com.New_Minor__c}" styleClass="text affliationText minorList"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="nm" labelStyle="display:none;" labelStyleClass="nm">
+                    <apex:outputLabel value="{!$ObjectType.Change_Of_Major__c.fields.Minor_Head_Of_Study__c.Label}" />
+                    <apex:selectlist size="1" value="{!com.Minor_Head_Of_Study__c}" styleclass="text affliationText">
+                        <apex:selectoptions value="{!hosMinorList}"/>
+                    </apex:selectlist>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+            	<apex:outputPanel layout="block">
+                	<apex:commandButton action="{!save}" value="Submit"/>
+                	<apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

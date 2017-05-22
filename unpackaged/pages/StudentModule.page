@@ -1,0 +1,220 @@
+<apex:page action="{!onLoad}" controller="StudentModuleController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+
+    <style type="text/css">
+        .bPageBlock .pbTitle {
+            vertical-align: middle;
+            color: #222;
+            font-size: 91%;
+            width: 100%;
+            margin: 0;
+        }
+        
+        .column{
+        	width: 90%;
+        }
+    </style>
+    <script>
+    	function validation(e){
+            var file;
+            var btnValue = document.activeElement.getAttribute('value');
+            var alertComp = document.getElementsByClassName("alertComp")[0];
+            var attachment = document.getElementsByClassName("attachment")[0];
+            var validationError = false;
+
+            alertComp.innerHTML = "";
+            alertComp.display = "none";
+            
+            if(attachment.files[0]){
+                file = attachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("Attachment file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(btnValue == "Cancel"){
+                validationError = false;
+                attachment.value = "";
+            }
+
+            if(validationError){
+                window.scrollTo(0, 0);
+                e.preventDefault();
+                return false;
+            }else{
+                return true;
+            }
+        }
+    
+    	function showError(message){
+            var alertComp = document.getElementsByClassName("alertComp")[0];
+            alertComp.removeAttribute("style");
+            alertComp.innerHTML += "<li>" + message + "</li>";
+        }
+    </script>
+    
+    <apex:form id="form" onsubmit="validation(event);">
+        <apex:messages id="messages"/>
+        <ul role="alert" class="alert alertComp" style="display:none;"></ul>
+        
+        <apex:pageBlock id="block" title="Modules Add/Drop">
+            <apex:outputPanel layout="block" styleClass="pbSubsection">
+                Please fill up this form which will be submitted to your <b>Vice Rector</b> for approval if you wish to:<br/>
+
+                <ol>
+                    <li>Add NUS module(s)</li>
+                    <li>Drop NUS module(s)</li>
+                    <li>Drop Yale-NUS Module(s) after instructional week two</li>
+                </ol>
+                
+                <b>Notes on NUS modules:</b><br/>
+                
+                <ol>
+                    <li>Students who are interested in NUS modules are encouraged to discuss with their Vice Rector, Faculty Advisors and, for students with declared majors, with their Head of Study or designee.</li>
+                    <li>Students who wish to count the NUS module(s) towards their major need to obtain approval from their respective Head of Study with clear indication of how the module(s) fulfils the requirement(s) within the major. In the case of NUS modules taken prior to the declaration of major, students may petition their Head of Study to obtain approval to count towards their major retrospectively.</li>
+                    <li>Registration for NUS modules is subject to approval from the respective NUS Faculty/School.</li>
+                    <li>To check if the NUS module(s) has prerequisites, please visit <a target="_blank" href="http://www.nus.edu.sg/nusbulletin/search-modules/.">http://www.nus.edu.sg/nusbulletin/search-modules/.</a></li>
+                    <li>Students taking NUS modules are subject to NUS add/drop timelines and policies. The NUS Academic Calendar and add/drop timelines is available at: <a href="http://www.nus.edu.sg/registrar/calendar.html" target="_blank">NUS Academic Calendar.</a></li>
+                    <li>If you are overloading with the NUS module(s) applied for, please ensure that you follow up to submit the online ‘Request for Overloading’ form as well.</li>
+                </ol>
+            </apex:outputPanel>
+            
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2" collapsible="false">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matric_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Residential_College__c.fields.Residential_College_Master__c.Label}"/>
+                    <apex:outputText value="{!residentialCollegeName}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:outputPanel id="addModulesTable" layout="block">
+                <apex:actionRegion >
+                    <apex:variable var="index" value="{!1}"/>
+                    <apex:pageBlockSection title="Add Modules" columns="1" collapsible="false">
+                        <apex:commandButton action="{!addModule}" value="Add Row" reRender="addModulesTable"/>
+                        <apex:pageBlockTable id="addTable" value="{!addStudentModules}" var="sm">
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Academic_Year__c.Label}">
+                                <apex:inputField value="{!sm.Academic_Year__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Semester__c.Label}">
+                                <apex:inputField value="{!sm.Semester__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Module_Host_Faculty__c.Label}">
+                                <apex:inputField value="{!sm.Module_Host_Faculty__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Module_Code__c.Label}">
+                                <apex:inputField value="{!sm.Module_Code__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Module_Title__c.Label}">
+                                <apex:inputField value="{!sm.Module_Title__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.MC__c.Label}">
+                                <apex:inputField value="{!sm.MC__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Preferred_Datetime__c.Label}">
+                                <apex:inputField value="{!sm.Preferred_Datetime__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Reason__c.Label}">
+                                <apex:inputField value="{!sm.Reason__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Overload__c.Label}">
+                                <apex:inputField value="{!sm.Overload__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Prerequisites__c.Label}">
+                                <apex:inputField value="{!sm.Prerequisites__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Count_To__c.Label}">
+                                <apex:inputField value="{!sm.Count_To__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="Action">
+                                <apex:commandButton action="{!deleteRow}" value="Delete Row" reRender="addModulesTable">
+                                    <apex:param name="index" value="{!index}" assignTo="{!indexString}"/>
+                                </apex:commandButton>
+                                
+                                <apex:variable var="index" value="{!index + 1}"/>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:actionRegion>
+            </apex:outputPanel>
+            
+            <apex:actionRegion >
+                <apex:pageblocksection id="attachmentSection" columns="1" title="Attachment" collapsible="false">
+                    <apex:outputPanel layout="block">
+                        Please upload supporting documents, if any (e.g. proof of prerequisite being met, and/or, email approval from Head of Study of major/minor if any of the above NUS module(s) is to count towards your major/minor).
+                    </apex:outputPanel>
+                    <apex:outputpanel layout="block">
+                        <i><apex:outputlabel value="{!fileSizeMessages}" style="color:red;font-size:small;"/></i>
+                    </apex:outputpanel>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!attachmentLabel}" for="attachment"/>
+                        <apex:inputfile filename="{!attachment.Name}" filesize="{!attachment.BodyLength}" value="{!attachment.Body}" styleclass="attachment"/>
+                    </apex:pageBlockSectionItem>
+                </apex:pageblocksection>
+            </apex:actionRegion>
+            
+            <apex:actionRegion >
+                <apex:outputPanel id="dropModulesTable" layout="block">
+                    <apex:variable var="index" value="{!1}"/>
+                    <apex:pageBlockSection id="detailSection" title="Drop Modules" columns="1" collapsible="false">
+                        <apex:commandButton action="{!addDropModule}" value="Add Row" reRender="dropModulesTable"/>
+                        <apex:pageBlockTable id="table" value="{!studentModules}" var="sm">
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Academic_Year__c.Label}">
+                                <apex:inputField value="{!sm.Academic_Year__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Semester__c.Label}">
+                                <apex:inputField value="{!sm.Semester__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Module_Host_Faculty__c.Label}">
+                                <apex:inputField value="{!sm.Module_Host_Faculty__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Module_Code__c.Label}">
+                                <apex:inputField value="{!sm.Module_Code__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Module_Title__c.Label}">
+                                <apex:inputField value="{!sm.Module_Title__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.MC__c.Label}">
+                                <apex:inputField value="{!sm.MC__c}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Student_Module__c.fields.Drop_Reason__c.Label}">
+                                <apex:inputText value="{!sm.Drop_Reason__c}" disabled="{!IF(sm.isDeleted__c == true, true, false)}" styleClass="column"/>
+                            </apex:column>
+                            <apex:column headerValue="Action">
+                                <apex:commandButton action="{!deleteRowDropModule}" value="Delete Row" reRender="dropModulesTable">
+                                    <apex:param name="index" value="{!index}" assignTo="{!indexString}"/>
+                                </apex:commandButton>
+                                
+                                <apex:variable var="index" value="{!index + 1}"/>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+            </apex:actionRegion>
+            
+            <apex:pageBlockSection collapsible="false" title=" " columns="1">
+                <apex:pageBlockSectionItem >
+                    <!--<apex:outputLabel value="{!$ObjectType.Case.fields.Total_MC__c.Label}"/>-->
+                    <apex:outputLabel value="Total Number of MCs expected to be completed by end of current semester, after above modules added/dropped):"/>
+                    <apex:inputText value="{!c.Total_MC__c}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1" collapsible="false">
+            	<apex:outputPanel layout="block">
+                	<apex:commandButton action="{!save}" value="Submit"/>
+                	<apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

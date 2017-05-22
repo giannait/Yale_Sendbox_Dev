@@ -1,0 +1,221 @@
+<apex:page id="page" action="{!onLoad}" controller="CapstoneModuleController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    <style>
+        .justify{
+            text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+        }
+        
+        .textarea{
+            width : 99%;
+            height : 150px;
+        }
+
+        .text{
+            width : 250px;
+        }
+    </style>
+    <script>
+        function checkboxOnChange(){
+            var value = document.getElementById("page:form:block:vrSection:checkbox").checked;
+            var psa = document.getElementsByClassName("psa");
+            var csn = document.getElementsByClassName("csn");
+            var cse = document.getElementsByClassName("cse");
+
+            var affliationText = document.getElementsByClassName("affliationText");
+            var affliationTextLabel = document.getElementsByClassName("affliationTextLabel");
+
+            var fal = document.getElementsByClassName("firstApproverList");
+            var fel = document.getElementsByClassName("firstEmailList");
+            var fat = document.getElementsByClassName("firstApproverText");
+            var fet = document.getElementsByClassName("firstEmailText");
+            
+            if(value){
+                showElement(psa);
+                showElement(csn);
+                showElement(cse);
+                showElement(fat);
+                showElement(fet);
+
+                hideElement(fal);
+                hideElement(fel);
+            }else{
+                //affliationTextLabel[0].innerHTML = "";
+                
+                for(var i=0;i<affliationText.length;i++){
+                    affliationText[i].value = "";
+                }
+                
+                for(var i=0;i<affliationTextLabel.length;i++){
+                	affliationTextLabel[i].innerHTML = "";
+                }
+                
+                hideElement(psa);
+                hideElement(csn);
+                hideElement(cse);
+
+                hideElement(fat);
+                hideElement(fet);
+
+                showElement(fal);
+                showElement(fel);
+            }
+        }
+    
+        function showElement(e){
+            for(var i=0;i<e.length;i++){
+                e[i].removeAttribute('style');
+            }
+        }
+    
+        function hideElement(e){
+            for(var i=0;i<e.length;i++){
+                e[i].style.display = 'none';
+            }
+        }
+    </script>
+    
+    <apex:form id="form">
+        <apex:messages id="messages"/>
+        <apex:actionFunction name="affliationOnChange" action="{!affliationOnChange}" reRender="panel"/>
+        
+        <apex:pageBlock id="block" title="Capstone Module Proposal Form">
+            <apex:pageBlockSection columns="1" rendered="true">
+                <b>Completion of this form facilitates two main purposes:</b><br/>
+                <table style="width:100%;">
+                    <tr>
+                        <td>1)</td>
+                        <td>
+                            It allows the proposal to be registered following conversations between a Capstone Supervisor and, where necessary, the co-supervisor with the student about the general aims, methodology and expected outcomes of the project as well as the nature and frequency of the supervision and mentoring.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2)</td>
+                        <td>
+                            The Capstone Project is a 10-MC module to be completed over two semesters. Completion of this Registration form allows the College Registry to record the student’s enrolment for the Capstone Project.
+                        </td>
+                    </tr>
+                </table>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="studentSection" title="Student Information" columns="2">
+                <apex:outputField value="{!contact.Name}"/>
+                <apex:outputField value="{!contact.Matric_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"/>
+                <apex:outputField value="{!contact.Current_Year__c}"/>
+                
+                <apex:outputField value="{!contact.Email}"/>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Residential_College__c.fields.Name.Label}"/>
+                    <apex:outputText value="{!residentialCollegeName}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="vrSection" title="Capstone Project Registration Form" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Current Major"></apex:outputLabel>
+                    <apex:outputText styleClass="major" value="{!currentMajor}"></apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:inputField id="checkbox" value="{!capstoneModule.Project_Supervisor_Exterent__c}" onchange="checkboxOnChange();"/>
+                
+                <apex:pageBlockSectionItem dataStyleClass="firstApproverList" labelStyleClass="firstApproverList">
+                    <apex:outputLabel value="Project Supervisor Name"></apex:outputLabel>
+                    <apex:actionRegion >
+                        <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:selectList id="firstApprover" value="{!firstApprover}" multiselect="false" size="1" styleClass="text">
+                                <apex:selectOptions value="{!firstApproverEmails}"></apex:selectOptions>
+                                <apex:actionSupport action="{!firstApproverOnChange}" event="onchange" reRender="emailSectionItem"/>
+                            </apex:selectList>
+                        </apex:outputPanel>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem dataStyleClass="firstEmailList" labelStyleClass="firstEmailList">
+                    <apex:outputLabel value="Project Supervisor Email"></apex:outputLabel>
+                    <apex:outputText id="emailSectionItem" value="{!firstApproverEmail}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem dataStyle="display:none" dataStyleClass="firstApproverText" labelStyle="display:none" labelStyleClass="firstApproverText">
+                    <apex:outputLabel value="Project Supervisor Name"></apex:outputLabel>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <div class="requiredBlock"></div>
+                        <apex:inputText value="{!firstApprover2}" styleClass="affliationText text"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem dataStyle="display:none" dataStyleClass="firstEmailText" labelStyle="display:none" labelStyleClass="firstEmailText">
+                    <apex:outputLabel value="Project Supervisor Email"></apex:outputLabel>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <div class="requiredBlock"></div>
+                        <apex:inputText value="{!firstApproverEmail2}" styleClass="affliationText text" html-type="email"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="psa" labelStyle="display:none;" labelStyleClass="psa">
+                    <apex:outputLabel value="{!$ObjectType.Capstone_Module__c.fields.Project_Supervisor_Affliation__c.Label}" />
+                    <apex:inputField value="{!capstoneModule.Project_Supervisor_Affliation__c}" styleClass="affliationText text"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="csn" labelStyle="display:none;" labelStyleClass="csn">
+                    <apex:outputLabel value="{!$ObjectType.Capstone_Module__c.fields.Co_Supervisor_Name__c.Label}" />
+                    <apex:actionRegion >
+                        <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:selectList id="firstApprover" value="{!secondApprover}" multiselect="false" size="1" styleClass="affliationText text" rendered="true">
+                                <apex:selectOptions value="{!secondApproverEmails}"></apex:selectOptions>
+                                <apex:actionSupport action="{!secondApproverOnChange}" event="onchange" reRender="emailSectionItem2"/>
+                            </apex:selectList>
+                        </apex:outputPanel>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="cse" labelStyle="display:none;" labelStyleClass="cse">
+                    <apex:outputLabel value="{!$ObjectType.Capstone_Module__c.fields.Co_Supervisor_Email__c.Label}" />
+                    <apex:outputText id="emailSectionItem2" value="{!secondApproverEmail}" styleClass="affliationTextLabel text"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:inputField value="{!capstoneModule.Project_Title__c}" styleClass="text"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Project Description" columns="1">
+                Briefly outline the aims, methodology and expected outcomes by the end of Semester 1 as well as the end of Semester 2 (where necessary, the supervisor should confirm that IRB approval has been applied for/obtained.) Please attach separate document for elaboration if necessary.
+                <apex:pageBlockSectionItem >
+                    <apex:inputField value="{!capstoneModule.Project_Description__c}" required="true" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Supervision" columns="1">
+                Please state the nature and frequency of meetings between the student and the supervisor and, where relevant, the Yale-NUS  co-supervisor, during the duration of the capstone project:
+                <apex:pageBlockSectionItem >
+                    <apex:inputField value="{!capstoneModule.Supervision__c}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1" rendered="false">
+                <apex:pageBlockTable id="table" value="{!capstoneModuleActivities}" var="cma">
+                    <apex:column headerValue="Activity">
+                        <apex:outputField value="{!cma.Activity__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Action">
+                        <apex:outputField value="{!cma.Action__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Check">
+                        <apex:inputField value="{!cma.Check__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel" immediate="true"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

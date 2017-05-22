@@ -1,0 +1,201 @@
+<apex:page action="{!onLoad}" id="page" controller="DynamicCaseController" showHeader="false" cache="false">
+    <apex:stylesheet value="{!$Resource.responsiveCss}"/>
+    <style>
+        .textarea{
+            width : 99%;
+            height : 150px;
+        }
+
+        .bPageBlock .pbTitle {
+            vertical-align: middle;
+            color: #222;
+            font-size: 91%;
+            width: 100%;
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        function validateFileUpload(e){
+            var file;
+            var alertComp = document.getElementsByClassName("alertComp")[0];
+            var enrolmentAttachment = document.getElementsByClassName("enrolmentAttachment")[0];
+            var nsAttachment = document.getElementsByClassName("nsAttachment")[0];
+            var validationError = false;
+
+            alertComp.innerHTML = "";
+            alertComp.display = "none";
+
+            if(enrolmentAttachment.files[0]){
+                file = enrolmentAttachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("Student Status Letter Attachment file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(nsAttachment.files[0]){
+                file = nsAttachment.files[0];
+
+                if(file.size >= {!maxFileUploadSize}){
+                    showError("NS Attachment file size maximum is 5 Mbytes!");
+                    validationError = true;
+                }
+            }
+
+            if(validationError){
+                window.scrollTo(0, 0);
+                e.preventDefault();
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function showError(message){
+            var alertComp = document.getElementsByClassName("alertComp")[0];
+            alertComp.removeAttribute("style");
+            alertComp.innerHTML += "<li>" + message + "</li>";
+        }
+    </script>
+
+    <apex:form id="form" onsubmit="validateFileUpload(event);">
+        <apex:messages id="messages"/>
+        <ul role="alert" class="alert alertComp" style="display:none;"></ul>
+        
+        <apex:pageBlock id="block" title="{!IF((typeOfEnquiry == 'Request for Letter of Residence'), 'Request for Letter of Residence', IF((typeOfEnquiry == 'Request for Student Status Letter (Additional remarks needed)'), 'Request for Student Status Letter (Additional remarks needed)', 'Enquiry Form'))}">
+            <apex:pageBlockSection id="studentSection" title="Student Detail" columns="2">
+                <apex:outputField value="{!contact.Name}"></apex:outputField>
+                <apex:outputField value="{!contact.Matric_Year__c}"></apex:outputField>
+                
+                <apex:outputField value="{!contact.Student_Identity__c}"></apex:outputField>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Year of Study"/>
+                    <apex:outputText value="{!contact.Current_Year__c}"></apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputField value="{!contact.Email}"></apex:outputField>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Residential_College__c.fields.Residential_College_Master__c.Label}"></apex:outputLabel>
+                    <apex:outputText value="{!residentialCollegeName}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <!--
+            <apex:pageBlockSection id="enquirySection" title="Enquiry Detail" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Department"/>
+                    <apex:outputText value="{!department}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Sub Department"/>
+                    <apex:outputText value="{!subDepartment}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+-->            
+
+            <apex:pageBlockSection id="messageSection" title="Message" columns="1">
+                <apex:outputPanel layout="block" rendered="{!showEnrolment}" styleClass="justify" style="margin-top: -45px;">
+                    <ol type="1">
+                        <li>
+                            You may view and print your student status letter via <a href="http://www.google.com" target="_blank">SIS</a>. A step-by-step guide is available <a href="http://www.google.com" target="_blank">here</a>.
+                        </li>
+                        <br/>
+                        <li>
+                            If you require additional remarks in the status letter, please leave your comment in the box below and Registry will get back to you within 3 to 5 working days.
+                        </li>
+                        <br/>
+                        <li>
+                            <ol type="a">
+                                <li>
+                                    If you require an electronic copy of your status letter to be sent to an external academic organization in confidence, please state your request in the box below.
+                                </li>
+                                <br/>
+                                <li>
+                                    If you require a mailed copy of your status letter to be sent to an external academic organization in confidence, please state your request in the box below so that Registry can provide the status letter in a sealed envelope for your collection from Student Services Centre.
+                                </li>
+                                <br/>
+                            </ol>
+                        </li>
+                    </ol>
+                </apex:outputPanel>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Message"/>
+                    <apex:inputTextarea html-placeholder="Input your message here" value="{!cc.CommentBody}" styleClass="textarea"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="1" title="Attachment File" rendered="{!showEnrolment}">
+                <apex:outputpanel layout="block">
+                    Please upload supporting documents if applicable.
+                </apex:outputpanel>
+
+                <apex:outputpanel layout="block">
+                    <i><apex:outputlabel value="{!fileSizeMessage}" style="color:red;font-size:small;"/></i>
+                </apex:outputpanel>
+
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="{!attachmentLabel}" for="attachment"/>
+                    <apex:inputFile id="attachment" fileName="{!attachment.Name}" value="{!attachment.Body}" styleclass="enrolmentAttachment"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="enrolmentSection" title="Outline for Student Status Letter" columns="1" rendered="{!showEnrolment}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Current Degree Name"/>
+                    <apex:outputText value="{!contact.Degree_Name__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Length of course"/>
+                    <apex:outputText value="{!contact.Length_of_Course__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputField value="{!contact.NRIC__c}"/>
+                <apex:outputField value="{!passport.Name}"/>
+                <apex:outputField value="{!passport.Date_of_Expiry__c}"/>
+                
+                <apex:inputField value="{!c.Hardcopy_Needed__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="residenceSection" title="Request for Letter of  Residence" columns="1" rendered="{!showResidence}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Current Degree Name"/>
+                    <apex:outputText value="{!contact.Degree_Name__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Length of course"/>
+                    <apex:outputText value="{!contact.Length_of_Course__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputField value="{!passport.Name}"/>
+                <apex:outputField value="{!passport.Date_of_Expiry__c}"/>
+                
+                <apex:inputField value="{!c.Hardcopy_Needed__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="nsSection" title="NS Call-up Details" columns="1" rendered="{!showNS}">
+                <apex:inputField value="{!c.NS_From_Date__c}"></apex:inputField>
+                <apex:inputField value="{!c.NS_To_Date__c}"></apex:inputField>
+                
+                <apex:pageBlockSectionItem labelTitle="Attachment File">
+                    <apex:outputLabel value="{!attachmentLabel}" for="attachment"/>
+                    <apex:inputFile id="attachment" fileName="{!attachment.Name}" value="{!attachment.Body}" styleclass="nsAttachment"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:inputField value="{!c.Hardcopy_Needed__c}"/>
+            </apex:pageBlockSection>
+            <br/><br/><br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:outputPanel layout="block">
+                    <apex:commandButton action="{!save}" value="Submit"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock> 
+        
+        
+    </apex:form>
+    
+</apex:page>
