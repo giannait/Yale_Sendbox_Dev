@@ -140,9 +140,9 @@ he/she intends to finish during the semester. This module is graded CS/CU.
                 </div>
 
 
-                <apex:inputField value="{!irr.Project_Type__c}" onchange="typeOnChange();" styleClass="projectType text"/>
+                <apex:inputField value="{!irr.Project_Type__c}" onchange="" styleClass="projectType text"/>
                 
-                <apex:pageBlockSectionItem dataStyle="display:none;" dataStyleClass="ipp" labelStyle="display:none;" labelStyleClass="ipp">
+                <apex:pageBlockSectionItem dataStyle="" dataStyleClass="ipp" labelStyle="" labelStyleClass="ipp">
                     <apex:outputLabel value="Are you doing this project individually or with a partner"/>
                     <apex:inputField value="{!irr.Individual_Partner_Project__c}" onchange="ippOnChange();" styleClass="ipptext text"/>
                 </apex:pageBlockSectionItem>
