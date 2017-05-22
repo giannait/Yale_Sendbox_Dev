@@ -93,7 +93,7 @@
         
         <apex:actionFunction name="ptOnChange" action="{!projectTypeOnchange}" reRender="block"/>
         
-        <apex:pageBlock id="block" title="2MC Independent Reading and Research/5MC Special Project in Science Registration Form">
+        <apex:pageBlock id="block" title="2MC Independent Reading and Research / 5MC Special Project in Science / 2MC Independent Language Study and Research Registration Form">
             <apex:pageBlockSection id="studentSection" title="Student Information" columns="2">
                 <apex:outputField value="{!contact.Name}"/>
                 <apex:outputField value="{!contact.Matric_Year__c}"/>
